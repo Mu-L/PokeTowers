@@ -51,3 +51,4 @@ scripts/
 ## License
 
 For educational purposes only. Pokemon is a trademark of Nintendo/Game Freak.
+add storage system
