@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cmainmenu"]
 
 [ext_resource type="Script" path="res://scripts/ui/main_menu.gd" id="1_script"]
-[ext_resource type="Texture2D" path="res://assets/sprites/pikachu.png" id="2_pikachu"]
+[ext_resource type="Texture2D" path="res://assets/sprites/pikachu/icon.png" id="2_pikachu"]
 [ext_resource type="Texture2D" path="res://icon.svg" id="3_pokeball"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_title"]

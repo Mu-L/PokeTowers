@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://cgeodude_enemy"]
 
 [ext_resource type="Script" path="res://scripts/enemies/geodude.gd" id="1_geodude"]
-[ext_resource type="Texture2D" uid="uid://cgeodude_sprite" path="res://assets/sprites/geodude.png" id="2_sprite"]
+[ext_resource type="Texture2D" uid="uid://cgeodude_sprite" path="res://assets/sprites/geodude/icon.png" id="2_sprite"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_body"]
 radius = 20.0

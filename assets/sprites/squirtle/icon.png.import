@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c7ovfidqjyjk2"
-path="res://.godot/imported/squirtle.png-a7ff84d7e20c6613c3571f1abd09335e.ctex"
+path="res://.godot/imported/icon.png-ae0d05b3a739475fdd6d31aaa5e03685.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://assets/sprites/squirtle/icon.png"
-dest_files=["res://.godot/imported/squirtle.png-a7ff84d7e20c6613c3571f1abd09335e.ctex"]
+dest_files=["res://.godot/imported/icon.png-ae0d05b3a739475fdd6d31aaa5e03685.ctex"]
 
 [params]
 

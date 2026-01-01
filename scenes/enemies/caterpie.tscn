@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://ccaterpie_enemy"]
 
 [ext_resource type="Script" path="res://scripts/enemies/caterpie.gd" id="1_caterpie"]
-[ext_resource type="Texture2D" uid="uid://cbrwm3huigrmj" path="res://assets/sprites/caterpie.png" id="2_sprite"]
+[ext_resource type="Texture2D" uid="uid://cbrwm3huigrmj" path="res://assets/sprites/caterpie/icon.png" id="2_sprite"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_body"]
 radius = 12.0
