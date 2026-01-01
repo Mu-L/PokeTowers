@@ -99,7 +99,7 @@ func create_starter_card(data: Dictionary) -> PanelContainer:
 	sprite.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
 	sprite.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
 	sprite.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
-	var sprite_path = "res://assets/sprites/%s.png" % data.id
+	var sprite_path = "res://assets/sprites/%s/icon.png" % data.id
 	if ResourceLoader.exists(sprite_path):
 		sprite.texture = load(sprite_path)
 	sprite_container.add_child(sprite)

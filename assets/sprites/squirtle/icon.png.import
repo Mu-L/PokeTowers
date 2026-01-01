@@ -10,7 +10,7 @@ metadata={
 
 [deps]
 
-source_file="res://assets/sprites/squirtle.png"
+source_file="res://assets/sprites/squirtle/icon.png"
 dest_files=["res://.godot/imported/squirtle.png-a7ff84d7e20c6613c3571f1abd09335e.ctex"]
 
 [params]

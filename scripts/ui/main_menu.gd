@@ -133,7 +133,7 @@ func update_slot_panel(panel: PanelContainer, slot: int, info: Dictionary) -> vo
 
 		# Try to load starter sprite
 		sprite.visible = true
-		var sprite_path = "res://assets/sprites/%s.png" % starter
+		var sprite_path = "res://assets/sprites/%s/icon.png" % starter
 		if ResourceLoader.exists(sprite_path):
 			sprite.texture = load(sprite_path)
 
