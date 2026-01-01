@@ -43,15 +43,3 @@ position = Vector2(440, 360)
 shape = SubResource("RectangleShape2D_placement")
 
 [node name="PlacementZones" type="Node2D" parent="TowerPlacement"]
-
-[node name="Base" type="Sprite2D" parent="."]
-position = Vector2(660, 700)
-scale = Vector2(1.5, 1.5)
-
-[node name="BaseLabel" type="Label" parent="Base"]
-offset_left = -25.0
-offset_top = -10.0
-offset_right = 25.0
-offset_bottom = 10.0
-text = "BASE"
-horizontal_alignment = 1

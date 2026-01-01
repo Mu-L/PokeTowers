@@ -61,22 +61,63 @@ func create_pokemon_card(species_id: String, species: PokemonSpecies, caught: Ca
 	# Select button
 	var btn = Button.new()
 	btn.text = "Select"
-	btn.pressed.connect(_on_pokemon_toggled.bind(species_id, btn))
+	btn.add_theme_font_size_override("font_size", 11)
+	style_button(btn, false)
+	btn.pressed.connect(_on_pokemon_toggled.bind(species_id, btn, panel))
 	vbox.add_child(btn)
 
 	panel.set_meta("species_id", species_id)
 	panel.set_meta("btn", btn)
+	style_card(panel, false)
 
 	return panel
 
-func _on_pokemon_toggled(species_id: String, btn: Button) -> void:
+func _on_pokemon_toggled(species_id: String, btn: Button, panel: PanelContainer) -> void:
 	if species_id in selected:
 		selected.erase(species_id)
 		btn.text = "Select"
+		style_button(btn, false)
+		style_card(panel, false)
 	elif selected.size() < MAX_PARTY:
 		selected.append(species_id)
-		btn.text = "Selected"
+		btn.text = "✓ In Party"
+		style_button(btn, true)
+		style_card(panel, true)
 	update_ui()
+
+func style_button(btn: Button, is_selected: bool) -> void:
+	var style = StyleBoxFlat.new()
+	style.set_corner_radius_all(4)
+	style.set_content_margin_all(4)
+
+	if is_selected:
+		style.bg_color = Color(0.2, 0.6, 0.3)
+		style.border_color = Color(0.3, 0.8, 0.4)
+		btn.add_theme_color_override("font_color", Color.WHITE)
+	else:
+		style.bg_color = Color(0.25, 0.25, 0.32)
+		style.border_color = Color(0.35, 0.35, 0.45)
+		btn.add_theme_color_override("font_color", Color(0.8, 0.8, 0.85))
+
+	style.set_border_width_all(1)
+	btn.add_theme_stylebox_override("normal", style)
+	btn.add_theme_stylebox_override("hover", style)
+	btn.add_theme_stylebox_override("pressed", style)
+
+func style_card(panel: PanelContainer, is_selected: bool) -> void:
+	var style = StyleBoxFlat.new()
+	style.set_corner_radius_all(6)
+	style.set_content_margin_all(8)
+	style.bg_color = Color(0.12, 0.12, 0.18)
+
+	if is_selected:
+		style.border_color = Color(0.3, 0.8, 0.4)
+		style.set_border_width_all(2)
+	else:
+		style.border_color = Color(0.25, 0.25, 0.32)
+		style.set_border_width_all(1)
+
+	panel.add_theme_stylebox_override("panel", style)
 
 func update_ui() -> void:
 	selected_label.text = "Party: %d / %d" % [selected.size(), MAX_PARTY]

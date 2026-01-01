@@ -2,13 +2,13 @@ extends Control
 
 const STARTERS = [
 	{
-		"id": "pikachu",
-		"name": "Pikachu",
-		"type": "Electric",
-		"type_color": Color(1, 0.9, 0.2),
-		"glow_color": Color(1, 0.9, 0.2, 0.3),
-		"role": "DPS / Multi-Hit",
-		"desc": "Chain Lightning"
+		"id": "bulbasaur",
+		"name": "Bulbasaur",
+		"type": "Grass",
+		"type_color": Color(0.4, 0.8, 0.4),
+		"glow_color": Color(0.4, 0.8, 0.4, 0.3),
+		"role": "DoT / Poison",
+		"desc": "Poison Seeds"
 	},
 	{
 		"id": "charmander",

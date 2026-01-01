@@ -112,6 +112,11 @@ func create_ghost_tower() -> void:
 
 	ghost_tower = species.tower_scene.instantiate()
 	ghost_tower.set_process(false)
+
+	# Assign caught pokemon BEFORE adding to tree so sprite gets set
+	if "caught_pokemon" in ghost_tower:
+		ghost_tower.caught_pokemon = caught
+
 	add_child(ghost_tower)
 
 	ghost_sprite = ghost_tower.get_node_or_null("Sprite2D")
@@ -162,11 +167,12 @@ func place_tower() -> void:
 
 	var tower = species.tower_scene.instantiate()
 	tower.global_position = current_zone.global_position
-	towers_container.add_child(tower)
 
-	# Assign caught pokemon for stats/XP tracking
+	# Assign caught pokemon BEFORE adding to tree so _ready() can use it
 	if "caught_pokemon" in tower:
 		tower.caught_pokemon = caught
+
+	towers_container.add_child(tower)
 
 	# Mark zone as occupied
 	occupied_zones[current_zone] = tower
