@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://63bwusik6ckm"
-path="res://.godot/imported/hitmonchan.png-20b2a3112d7847b4b08cf17518770830.ctex"
+path="res://.godot/imported/icon.png-2b1f83d66fa239d1175399ad3af470c8.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://assets/sprites/hitmonchan/icon.png"
-dest_files=["res://.godot/imported/hitmonchan.png-20b2a3112d7847b4b08cf17518770830.ctex"]
+dest_files=["res://.godot/imported/icon.png-2b1f83d66fa239d1175399ad3af470c8.ctex"]
 
 [params]
 

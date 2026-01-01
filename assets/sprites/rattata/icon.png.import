@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dj15chwa2caa"
-path="res://.godot/imported/rattata.png-ba32b1c058d445c7710f1fbc80482fdd.ctex"
+path="res://.godot/imported/icon.png-df8985edf1e715a7da430088ca9e67d6.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://assets/sprites/rattata/icon.png"
-dest_files=["res://.godot/imported/rattata.png-ba32b1c058d445c7710f1fbc80482fdd.ctex"]
+dest_files=["res://.godot/imported/icon.png-df8985edf1e715a7da430088ca9e67d6.ctex"]
 
 [params]
 

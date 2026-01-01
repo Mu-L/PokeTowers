@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cjqy56xjk43de"
-path="res://.godot/imported/drowzee.png-94f3094f9f7873db137d954318e7fee6.ctex"
+path="res://.godot/imported/icon.png-ac0c1a9dd9382934ef4e6114bf389b73.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://assets/sprites/drowzee/icon.png"
-dest_files=["res://.godot/imported/drowzee.png-94f3094f9f7873db137d954318e7fee6.ctex"]
+dest_files=["res://.godot/imported/icon.png-ac0c1a9dd9382934ef4e6114bf389b73.ctex"]
 
 [params]
 

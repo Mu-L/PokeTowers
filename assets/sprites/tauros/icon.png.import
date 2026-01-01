@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://drww5ftsy53wd"
-path="res://.godot/imported/tauros.png-8709c92abfe06a3cdd9eca4a267e4a19.ctex"
+path="res://.godot/imported/icon.png-ad3021eebcd2f717a1185e01b94b3d9a.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://assets/sprites/tauros/icon.png"
-dest_files=["res://.godot/imported/tauros.png-8709c92abfe06a3cdd9eca4a267e4a19.ctex"]
+dest_files=["res://.godot/imported/icon.png-ad3021eebcd2f717a1185e01b94b3d9a.ctex"]
 
 [params]
 

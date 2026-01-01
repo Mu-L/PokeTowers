@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bp7pgfsjjxo85"
-path="res://.godot/imported/pikachu.png-e513d8f20e33523de6a1e1acfafb4698.ctex"
+path="res://.godot/imported/icon.png-7852e7fe3ff637608c56b40889574120.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://assets/sprites/pikachu/icon.png"
-dest_files=["res://.godot/imported/pikachu.png-e513d8f20e33523de6a1e1acfafb4698.ctex"]
+dest_files=["res://.godot/imported/icon.png-7852e7fe3ff637608c56b40889574120.ctex"]
 
 [params]
 

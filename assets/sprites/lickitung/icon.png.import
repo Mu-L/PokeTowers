@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b3vh5fii6jp16"
-path="res://.godot/imported/lickitung.png-e524dd807c592f83dbcc91256e114c7c.ctex"
+path="res://.godot/imported/icon.png-fd289d6068a948784f2e9dd6b334d7ff.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://assets/sprites/lickitung/icon.png"
-dest_files=["res://.godot/imported/lickitung.png-e524dd807c592f83dbcc91256e114c7c.ctex"]
+dest_files=["res://.godot/imported/icon.png-fd289d6068a948784f2e9dd6b334d7ff.ctex"]
 
 [params]
 

@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://vb32lxvl76qx"
-path="res://.godot/imported/mightyena.png-cf5ae309a19c4769ee969635f9bbd447.ctex"
+path="res://.godot/imported/icon.png-fedabd43d2fe5a99e1b4a7dcf473dac7.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://assets/sprites/mightyena/icon.png"
-dest_files=["res://.godot/imported/mightyena.png-cf5ae309a19c4769ee969635f9bbd447.ctex"]
+dest_files=["res://.godot/imported/icon.png-fedabd43d2fe5a99e1b4a7dcf473dac7.ctex"]
 
 [params]
 

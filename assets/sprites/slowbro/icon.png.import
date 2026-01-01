@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://rg8pkgfm7rbp"
-path="res://.godot/imported/slowbro.png-b996b7e8559f0bf44bd8cbb294b79264.ctex"
+path="res://.godot/imported/icon.png-f85796fb65989881c6db24a94432ff7f.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://assets/sprites/slowbro/icon.png"
-dest_files=["res://.godot/imported/slowbro.png-b996b7e8559f0bf44bd8cbb294b79264.ctex"]
+dest_files=["res://.godot/imported/icon.png-f85796fb65989881c6db24a94432ff7f.ctex"]
 
 [params]
 

@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dasqboiki0ai1"
-path="res://.godot/imported/magby.png-222be85f6582b3d53f69ac95dcf9335e.ctex"
+path="res://.godot/imported/icon.png-a93eb90cf3dabbf8a607c06684a57456.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://assets/sprites/magby/icon.png"
-dest_files=["res://.godot/imported/magby.png-222be85f6582b3d53f69ac95dcf9335e.ctex"]
+dest_files=["res://.godot/imported/icon.png-a93eb90cf3dabbf8a607c06684a57456.ctex"]
 
 [params]
 

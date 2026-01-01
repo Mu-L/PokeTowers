@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c5jx0lyf0vbhx"
-path="res://.godot/imported/hooh.png-80b5e7f38d307807ef6016efaf144617.ctex"
+path="res://.godot/imported/icon.png-f0e88e0c8b889a94474734217f6a961d.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://assets/sprites/hooh/icon.png"
-dest_files=["res://.godot/imported/hooh.png-80b5e7f38d307807ef6016efaf144617.ctex"]
+dest_files=["res://.godot/imported/icon.png-f0e88e0c8b889a94474734217f6a961d.ctex"]
 
 [params]
 

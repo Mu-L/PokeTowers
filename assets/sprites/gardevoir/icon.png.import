@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://db4pek1i8cwqo"
-path="res://.godot/imported/gardevoir.png-3c480cb4a72ca99e7e04fc0452b4be74.ctex"
+path="res://.godot/imported/icon.png-46f29df75c02ce47b2a1dab81af7faad.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://assets/sprites/gardevoir/icon.png"
-dest_files=["res://.godot/imported/gardevoir.png-3c480cb4a72ca99e7e04fc0452b4be74.ctex"]
+dest_files=["res://.godot/imported/icon.png-46f29df75c02ce47b2a1dab81af7faad.ctex"]
 
 [params]
 

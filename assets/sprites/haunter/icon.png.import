@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://6ei7vitjqnal"
-path="res://.godot/imported/haunter.png-8c7dffbad4d497eb381fec4e58030f9a.ctex"
+path="res://.godot/imported/icon.png-ccbc9d032c5331308d44c4c4793372f8.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://assets/sprites/haunter/icon.png"
-dest_files=["res://.godot/imported/haunter.png-8c7dffbad4d497eb381fec4e58030f9a.ctex"]
+dest_files=["res://.godot/imported/icon.png-ccbc9d032c5331308d44c4c4793372f8.ctex"]
 
 [params]
 

@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d05hkflkrh4r1"
-path="res://.godot/imported/typhlosion.png-64862e248f3a26bd64f3195c85bede1e.ctex"
+path="res://.godot/imported/icon.png-72ce77bec85ec8f16c80787825eae43c.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://assets/sprites/typhlosion/icon.png"
-dest_files=["res://.godot/imported/typhlosion.png-64862e248f3a26bd64f3195c85bede1e.ctex"]
+dest_files=["res://.godot/imported/icon.png-72ce77bec85ec8f16c80787825eae43c.ctex"]
 
 [params]
 

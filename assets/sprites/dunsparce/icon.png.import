@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bjbvatnhjpps8"
-path="res://.godot/imported/dunsparce.png-e1b6a34e3a3a3721c7bbb598485d8e1a.ctex"
+path="res://.godot/imported/icon.png-249e2c02fc0397057b1eb5f05bdfebb3.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://assets/sprites/dunsparce/icon.png"
-dest_files=["res://.godot/imported/dunsparce.png-e1b6a34e3a3a3721c7bbb598485d8e1a.ctex"]
+dest_files=["res://.godot/imported/icon.png-249e2c02fc0397057b1eb5f05bdfebb3.ctex"]
 
 [params]
 

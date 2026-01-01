@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://g66ihcnxqbo0"
-path="res://.godot/imported/kingler.png-c298e615684b24ded4ef00d1d6daa4a5.ctex"
+path="res://.godot/imported/icon.png-505f31f04636ab865592e392e9342cdd.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://assets/sprites/kingler/icon.png"
-dest_files=["res://.godot/imported/kingler.png-c298e615684b24ded4ef00d1d6daa4a5.ctex"]
+dest_files=["res://.godot/imported/icon.png-505f31f04636ab865592e392e9342cdd.ctex"]
 
 [params]
 

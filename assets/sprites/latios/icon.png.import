@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://wo7c1aea47tg"
-path="res://.godot/imported/latios.png-cd792daf18340cd8efed307f643e0ffd.ctex"
+path="res://.godot/imported/icon.png-4f782f0ebe78fdd6d39747e98d79beaf.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://assets/sprites/latios/icon.png"
-dest_files=["res://.godot/imported/latios.png-cd792daf18340cd8efed307f643e0ffd.ctex"]
+dest_files=["res://.godot/imported/icon.png-4f782f0ebe78fdd6d39747e98d79beaf.ctex"]
 
 [params]
 

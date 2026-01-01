@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b780fuowpc8dt"
-path="res://.godot/imported/snorlax.png-8ecd79885d99f08b37acf3745ef7f392.ctex"
+path="res://.godot/imported/icon.png-aeb81642f565209579e6d099ab846ea7.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://assets/sprites/snorlax/icon.png"
-dest_files=["res://.godot/imported/snorlax.png-8ecd79885d99f08b37acf3745ef7f392.ctex"]
+dest_files=["res://.godot/imported/icon.png-aeb81642f565209579e6d099ab846ea7.ctex"]
 
 [params]
 

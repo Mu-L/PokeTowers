@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cp78tib266ect"
-path="res://.godot/imported/weezing.png-0b02ebbd41c76b73e780f22c40838207.ctex"
+path="res://.godot/imported/icon.png-083e60c2c6b3692116bb2e43216823d4.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://assets/sprites/weezing/icon.png"
-dest_files=["res://.godot/imported/weezing.png-0b02ebbd41c76b73e780f22c40838207.ctex"]
+dest_files=["res://.godot/imported/icon.png-083e60c2c6b3692116bb2e43216823d4.ctex"]
 
 [params]
 

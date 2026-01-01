@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dwrbpwejddq2q"
-path="res://.godot/imported/scizor.png-6a43b781814586d743a03ecd558d092c.ctex"
+path="res://.godot/imported/icon.png-0d67b97ed937189fa9873b23e4896d5f.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://assets/sprites/scizor/icon.png"
-dest_files=["res://.godot/imported/scizor.png-6a43b781814586d743a03ecd558d092c.ctex"]
+dest_files=["res://.godot/imported/icon.png-0d67b97ed937189fa9873b23e4896d5f.ctex"]
 
 [params]
 

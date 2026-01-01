@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://docsqosabxfn3"
-path="res://.godot/imported/goldeen.png-a16bfc3b35a4c3cb1dbfd2fab2c13f66.ctex"
+path="res://.godot/imported/icon.png-58c2f5f7120481bd8c35637866bf84e5.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://assets/sprites/goldeen/icon.png"
-dest_files=["res://.godot/imported/goldeen.png-a16bfc3b35a4c3cb1dbfd2fab2c13f66.ctex"]
+dest_files=["res://.godot/imported/icon.png-58c2f5f7120481bd8c35637866bf84e5.ctex"]
 
 [params]
 

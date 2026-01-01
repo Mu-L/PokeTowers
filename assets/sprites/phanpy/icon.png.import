@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bkkm8n0jlxpt3"
-path="res://.godot/imported/phanpy.png-ef7cd081527e5699ceb80b5a6d77dbff.ctex"
+path="res://.godot/imported/icon.png-e1d3cd3b74cc50ff85cdc5bd510a2c46.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://assets/sprites/phanpy/icon.png"
-dest_files=["res://.godot/imported/phanpy.png-ef7cd081527e5699ceb80b5a6d77dbff.ctex"]
+dest_files=["res://.godot/imported/icon.png-e1d3cd3b74cc50ff85cdc5bd510a2c46.ctex"]
 
 [params]
 

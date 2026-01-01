@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://53xw3ug4eim5"
-path="res://.godot/imported/jirachi.png-4677966381c3feb093d1122edbc89bd6.ctex"
+path="res://.godot/imported/icon.png-79e6a22afff8e3c86f544a32a3caa9f9.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://assets/sprites/jirachi/icon.png"
-dest_files=["res://.godot/imported/jirachi.png-4677966381c3feb093d1122edbc89bd6.ctex"]
+dest_files=["res://.godot/imported/icon.png-79e6a22afff8e3c86f544a32a3caa9f9.ctex"]
 
 [params]
 

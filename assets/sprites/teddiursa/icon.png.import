@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dvr7tvituhluy"
-path="res://.godot/imported/teddiursa.png-215483f0dec56a2bd9e98ff814401576.ctex"
+path="res://.godot/imported/icon.png-7aa091a3865254f04e49c4228e20cd9c.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://assets/sprites/teddiursa/icon.png"
-dest_files=["res://.godot/imported/teddiursa.png-215483f0dec56a2bd9e98ff814401576.ctex"]
+dest_files=["res://.godot/imported/icon.png-7aa091a3865254f04e49c4228e20cd9c.ctex"]
 
 [params]
 

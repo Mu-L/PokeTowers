@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c3qhgtq146rok"
-path="res://.godot/imported/sentret.png-9f16eeb29cc0d6a96b4233a68cc11916.ctex"
+path="res://.godot/imported/icon.png-dba3f715f4589eb4f77b0aed04fda4e2.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://assets/sprites/sentret/icon.png"
-dest_files=["res://.godot/imported/sentret.png-9f16eeb29cc0d6a96b4233a68cc11916.ctex"]
+dest_files=["res://.godot/imported/icon.png-dba3f715f4589eb4f77b0aed04fda4e2.ctex"]
 
 [params]
 

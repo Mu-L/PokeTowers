@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b40qlg0sl8tom"
-path="res://.godot/imported/graveler.png-6e16381690ccc1c4d8c743176c6096fa.ctex"
+path="res://.godot/imported/icon.png-6d7ebe8afe73ce3deeb2ba54951c685c.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://assets/sprites/graveler/icon.png"
-dest_files=["res://.godot/imported/graveler.png-6e16381690ccc1c4d8c743176c6096fa.ctex"]
+dest_files=["res://.godot/imported/icon.png-6d7ebe8afe73ce3deeb2ba54951c685c.ctex"]
 
 [params]
 

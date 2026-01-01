@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ktgd47vagn2i"
-path="res://.godot/imported/geodude.png-f8c4205ae9f46259d7b083d8332f1223.ctex"
+path="res://.godot/imported/icon.png-ab626f88b0de367b08941cae9c12ef85.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://assets/sprites/geodude/icon.png"
-dest_files=["res://.godot/imported/geodude.png-f8c4205ae9f46259d7b083d8332f1223.ctex"]
+dest_files=["res://.godot/imported/icon.png-ab626f88b0de367b08941cae9c12ef85.ctex"]
 
 [params]
 

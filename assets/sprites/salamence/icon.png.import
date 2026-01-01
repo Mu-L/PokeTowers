@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ccshl0dh3bnfx"
-path="res://.godot/imported/salamence.png-4c38a5631c7cd5055dbcc2a1ee527548.ctex"
+path="res://.godot/imported/icon.png-365aca43701d370c2ff7227131a2350d.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://assets/sprites/salamence/icon.png"
-dest_files=["res://.godot/imported/salamence.png-4c38a5631c7cd5055dbcc2a1ee527548.ctex"]
+dest_files=["res://.godot/imported/icon.png-365aca43701d370c2ff7227131a2350d.ctex"]
 
 [params]
 

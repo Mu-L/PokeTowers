@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d30kxmfaahdjc"
-path="res://.godot/imported/crobat.png-96e30060aba2b655fb36c70344774dba.ctex"
+path="res://.godot/imported/icon.png-e5a1785026144a7f12814462f77cce0c.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://assets/sprites/crobat/icon.png"
-dest_files=["res://.godot/imported/crobat.png-96e30060aba2b655fb36c70344774dba.ctex"]
+dest_files=["res://.godot/imported/icon.png-e5a1785026144a7f12814462f77cce0c.ctex"]
 
 [params]
 

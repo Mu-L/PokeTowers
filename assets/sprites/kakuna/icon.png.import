@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cpgkh4nf537ku"
-path="res://.godot/imported/kakuna.png-83df9cf235a80e8540bb719c272b55d1.ctex"
+path="res://.godot/imported/icon.png-a3a4c20a1385dcb73e5852520b03279f.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://assets/sprites/kakuna/icon.png"
-dest_files=["res://.godot/imported/kakuna.png-83df9cf235a80e8540bb719c272b55d1.ctex"]
+dest_files=["res://.godot/imported/icon.png-a3a4c20a1385dcb73e5852520b03279f.ctex"]
 
 [params]
 

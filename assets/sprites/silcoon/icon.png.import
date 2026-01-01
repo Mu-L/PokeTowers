@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ce0se0bpea0jq"
-path="res://.godot/imported/silcoon.png-1a38ce81d3fc986443df78bb8ac9c1cd.ctex"
+path="res://.godot/imported/icon.png-2136377d98df04584ce110cd4a742c58.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://assets/sprites/silcoon/icon.png"
-dest_files=["res://.godot/imported/silcoon.png-1a38ce81d3fc986443df78bb8ac9c1cd.ctex"]
+dest_files=["res://.godot/imported/icon.png-2136377d98df04584ce110cd4a742c58.ctex"]
 
 [params]
 

@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cbrwm3huigrmj"
-path="res://.godot/imported/caterpie.png-5043faab441f4ede42a1d5257b3cf681.ctex"
+path="res://.godot/imported/icon.png-e3f79c42d69bd937109f3cc37d64fb4b.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://assets/sprites/caterpie/icon.png"
-dest_files=["res://.godot/imported/caterpie.png-5043faab441f4ede42a1d5257b3cf681.ctex"]
+dest_files=["res://.godot/imported/icon.png-e3f79c42d69bd937109f3cc37d64fb4b.ctex"]
 
 [params]
 

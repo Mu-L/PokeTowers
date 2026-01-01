@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://x5sdbq5i825c"
-path="res://.godot/imported/dustox.png-f07b9a8c6f24102ebd6acc0be62c1b1d.ctex"
+path="res://.godot/imported/icon.png-3033c98b4b9c172dc0b651896b17f1ce.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://assets/sprites/dustox/icon.png"
-dest_files=["res://.godot/imported/dustox.png-f07b9a8c6f24102ebd6acc0be62c1b1d.ctex"]
+dest_files=["res://.godot/imported/icon.png-3033c98b4b9c172dc0b651896b17f1ce.ctex"]
 
 [params]
 

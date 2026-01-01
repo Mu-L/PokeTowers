@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dthqv4wlu4akf"
-path="res://.godot/imported/zapdos.png-9c94e816fc33da23221682f480272b2f.ctex"
+path="res://.godot/imported/icon.png-dd362d2e4aca21488a60cba9e33c285c.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://assets/sprites/zapdos/icon.png"
-dest_files=["res://.godot/imported/zapdos.png-9c94e816fc33da23221682f480272b2f.ctex"]
+dest_files=["res://.godot/imported/icon.png-dd362d2e4aca21488a60cba9e33c285c.ctex"]
 
 [params]
 

@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://coe57mmhis8e5"
-path="res://.godot/imported/miltank.png-3ab2a482dacdf4a8560015fe0fc43a1b.ctex"
+path="res://.godot/imported/icon.png-3f2091a9cd7184bbb80d6281dd05b917.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://assets/sprites/miltank/icon.png"
-dest_files=["res://.godot/imported/miltank.png-3ab2a482dacdf4a8560015fe0fc43a1b.ctex"]
+dest_files=["res://.godot/imported/icon.png-3f2091a9cd7184bbb80d6281dd05b917.ctex"]
 
 [params]
 

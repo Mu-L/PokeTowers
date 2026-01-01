@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cdro15mgnt8fx"
-path="res://.godot/imported/dugtrio.png-b1d81f11c89a92a35026c17596df5fca.ctex"
+path="res://.godot/imported/icon.png-e9a9e1ce67db5fca46b468c87b3813ca.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://assets/sprites/dugtrio/icon.png"
-dest_files=["res://.godot/imported/dugtrio.png-b1d81f11c89a92a35026c17596df5fca.ctex"]
+dest_files=["res://.godot/imported/icon.png-e9a9e1ce67db5fca46b468c87b3813ca.ctex"]
 
 [params]
 

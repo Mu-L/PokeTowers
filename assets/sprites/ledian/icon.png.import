@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bgo2gipl6b8fy"
-path="res://.godot/imported/ledian.png-05f71ce17db327af54d52c12705b2de6.ctex"
+path="res://.godot/imported/icon.png-ec705f8fad75b82226af7640e1e14933.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://assets/sprites/ledian/icon.png"
-dest_files=["res://.godot/imported/ledian.png-05f71ce17db327af54d52c12705b2de6.ctex"]
+dest_files=["res://.godot/imported/icon.png-ec705f8fad75b82226af7640e1e14933.ctex"]
 
 [params]
 

@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://8tqdfqpjtmpp"
-path="res://.godot/imported/meowth.png-b71beaaf399fdc61e4198593ef904193.ctex"
+path="res://.godot/imported/icon.png-1b075d5182cb5b0ccf55ee67144ae31e.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://assets/sprites/meowth/icon.png"
-dest_files=["res://.godot/imported/meowth.png-b71beaaf399fdc61e4198593ef904193.ctex"]
+dest_files=["res://.godot/imported/icon.png-1b075d5182cb5b0ccf55ee67144ae31e.ctex"]
 
 [params]
 

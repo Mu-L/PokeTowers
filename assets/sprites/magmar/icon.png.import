@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://exnce5k0bdfn"
-path="res://.godot/imported/magmar.png-ed7a80ebee2cbe06c9ea117b3bc4c4ab.ctex"
+path="res://.godot/imported/icon.png-6295605f597ef4b6a8cde2387392c874.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://assets/sprites/magmar/icon.png"
-dest_files=["res://.godot/imported/magmar.png-ed7a80ebee2cbe06c9ea117b3bc4c4ab.ctex"]
+dest_files=["res://.godot/imported/icon.png-6295605f597ef4b6a8cde2387392c874.ctex"]
 
 [params]
 

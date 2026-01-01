@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b06lbtkydyq6g"
-path="res://.godot/imported/octillery.png-c81ab223ea1e32373f3687cfb9a1fac9.ctex"
+path="res://.godot/imported/icon.png-ae72ad0c7472a7197ed1c29b3d79ce3a.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://assets/sprites/octillery/icon.png"
-dest_files=["res://.godot/imported/octillery.png-c81ab223ea1e32373f3687cfb9a1fac9.ctex"]
+dest_files=["res://.godot/imported/icon.png-ae72ad0c7472a7197ed1c29b3d79ce3a.ctex"]
 
 [params]
 

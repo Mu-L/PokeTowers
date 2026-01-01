@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b1wjaxxcig2ki"
-path="res://.godot/imported/golduck.png-c1549c1d5a20accbdf36e5b94d3b99ba.ctex"
+path="res://.godot/imported/icon.png-dbe6c5deffa0bbdaab72ddde1232a543.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://assets/sprites/golduck/icon.png"
-dest_files=["res://.godot/imported/golduck.png-c1549c1d5a20accbdf36e5b94d3b99ba.ctex"]
+dest_files=["res://.godot/imported/icon.png-dbe6c5deffa0bbdaab72ddde1232a543.ctex"]
 
 [params]
 

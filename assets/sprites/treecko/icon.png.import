@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bopv1xssn60q"
-path="res://.godot/imported/treecko.png-8b23c54dc776599ef6ab902e826f0c6e.ctex"
+path="res://.godot/imported/icon.png-68250dd4efc90579ad647a4b4606b304.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://assets/sprites/treecko/icon.png"
-dest_files=["res://.godot/imported/treecko.png-8b23c54dc776599ef6ab902e826f0c6e.ctex"]
+dest_files=["res://.godot/imported/icon.png-68250dd4efc90579ad647a4b4606b304.ctex"]
 
 [params]
 

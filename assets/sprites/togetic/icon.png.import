@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bnaatnc3208c3"
-path="res://.godot/imported/togetic.png-a47c7ede78b10a56bca0bf449a2dccfe.ctex"
+path="res://.godot/imported/icon.png-c90572cda0996df91d965d08dd72b02e.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://assets/sprites/togetic/icon.png"
-dest_files=["res://.godot/imported/togetic.png-a47c7ede78b10a56bca0bf449a2dccfe.ctex"]
+dest_files=["res://.godot/imported/icon.png-c90572cda0996df91d965d08dd72b02e.ctex"]
 
 [params]
 

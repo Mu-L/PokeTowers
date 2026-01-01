@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dwn2feix6svtm"
-path="res://.godot/imported/ludicolo.png-bd67047ac2444267ac550d386a289c5f.ctex"
+path="res://.godot/imported/icon.png-b6f660ff02f9cbd0c8c27d641854870a.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://assets/sprites/ludicolo/icon.png"
-dest_files=["res://.godot/imported/ludicolo.png-bd67047ac2444267ac550d386a289c5f.ctex"]
+dest_files=["res://.godot/imported/icon.png-b6f660ff02f9cbd0c8c27d641854870a.ctex"]
 
 [params]
 

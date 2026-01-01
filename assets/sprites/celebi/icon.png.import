@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bphcdgqusm1nj"
-path="res://.godot/imported/celebi.png-408cca937aa0a97b2331491178a4f50d.ctex"
+path="res://.godot/imported/icon.png-821a8b66158dd6b18c5014b2d0ea5bed.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://assets/sprites/celebi/icon.png"
-dest_files=["res://.godot/imported/celebi.png-408cca937aa0a97b2331491178a4f50d.ctex"]
+dest_files=["res://.godot/imported/icon.png-821a8b66158dd6b18c5014b2d0ea5bed.ctex"]
 
 [params]
 

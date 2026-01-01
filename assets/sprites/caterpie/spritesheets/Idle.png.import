@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://8thnh7hhfvry"
-path="res://.godot/imported/icon.png-8b00dd3faf72d6221921c2a576cf5535.ctex"
+uid="uid://bnaij1ymyhrwb"
+path="res://.godot/imported/Idle.png-054badd2327cc1b54fbcf88d8a592262.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/kangaskhan/icon.png"
-dest_files=["res://.godot/imported/icon.png-8b00dd3faf72d6221921c2a576cf5535.ctex"]
+source_file="res://assets/sprites/caterpie/spritesheets/Idle.png"
+dest_files=["res://.godot/imported/Idle.png-054badd2327cc1b54fbcf88d8a592262.ctex"]
 
 [params]
 

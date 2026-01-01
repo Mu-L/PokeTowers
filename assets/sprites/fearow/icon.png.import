@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dhtmlfm12g005"
-path="res://.godot/imported/fearow.png-f3908ccc992c6442b78eda7dcb0bc120.ctex"
+path="res://.godot/imported/icon.png-9dfa38e84c9cab824f40dbd41bf0e272.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://assets/sprites/fearow/icon.png"
-dest_files=["res://.godot/imported/fearow.png-f3908ccc992c6442b78eda7dcb0bc120.ctex"]
+dest_files=["res://.godot/imported/icon.png-9dfa38e84c9cab824f40dbd41bf0e272.ctex"]
 
 [params]
 

@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dfe265m53qkas"
-path="res://.godot/imported/carvanha.png-f39d64875a24b17dc347d2592a59124c.ctex"
+path="res://.godot/imported/icon.png-397e12fe744944197e2eef2afb6561a2.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://assets/sprites/carvanha/icon.png"
-dest_files=["res://.godot/imported/carvanha.png-f39d64875a24b17dc347d2592a59124c.ctex"]
+dest_files=["res://.godot/imported/icon.png-397e12fe744944197e2eef2afb6561a2.ctex"]
 
 [params]
 

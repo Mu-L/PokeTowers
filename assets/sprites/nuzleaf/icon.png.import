@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dv8hdklb3805n"
-path="res://.godot/imported/nuzleaf.png-773e52ebf4b00685fd8a2f7abcb5b08a.ctex"
+path="res://.godot/imported/icon.png-1dba711be306c779be1cf460ccf8ec42.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://assets/sprites/nuzleaf/icon.png"
-dest_files=["res://.godot/imported/nuzleaf.png-773e52ebf4b00685fd8a2f7abcb5b08a.ctex"]
+dest_files=["res://.godot/imported/icon.png-1dba711be306c779be1cf460ccf8ec42.ctex"]
 
 [params]
 

@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bd8whrng1mvqf"
-path="res://.godot/imported/shiftry.png-0dc0b2a2e8615a082977cf6eafe2cb5c.ctex"
+path="res://.godot/imported/icon.png-b6dbd140e4f4387944d873bb4bb7a926.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://assets/sprites/shiftry/icon.png"
-dest_files=["res://.godot/imported/shiftry.png-0dc0b2a2e8615a082977cf6eafe2cb5c.ctex"]
+dest_files=["res://.godot/imported/icon.png-b6dbd140e4f4387944d873bb4bb7a926.ctex"]
 
 [params]
 

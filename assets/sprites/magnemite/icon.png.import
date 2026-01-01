@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://icmd147lft0g"
-path="res://.godot/imported/magnemite.png-92702b881bdaac87cd87017c66cdd704.ctex"
+path="res://.godot/imported/icon.png-20508c59229a4864b53aee0114c42935.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://assets/sprites/magnemite/icon.png"
-dest_files=["res://.godot/imported/magnemite.png-92702b881bdaac87cd87017c66cdd704.ctex"]
+dest_files=["res://.godot/imported/icon.png-20508c59229a4864b53aee0114c42935.ctex"]
 
 [params]
 

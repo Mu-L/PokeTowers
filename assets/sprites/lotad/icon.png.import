@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cqyhqkb8wgcmw"
-path="res://.godot/imported/lotad.png-e1680245f8e122db39794bbb2d20f821.ctex"
+path="res://.godot/imported/icon.png-dec7a35d2ae89140fce91eb57956b88f.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://assets/sprites/lotad/icon.png"
-dest_files=["res://.godot/imported/lotad.png-e1680245f8e122db39794bbb2d20f821.ctex"]
+dest_files=["res://.godot/imported/icon.png-dec7a35d2ae89140fce91eb57956b88f.ctex"]
 
 [params]
 

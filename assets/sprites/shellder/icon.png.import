@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bsfru8wel72vw"
-path="res://.godot/imported/shellder.png-843d516498ac1c3e86f95d0625ecd26d.ctex"
+path="res://.godot/imported/icon.png-a5642c47468b56c63971b526278e7ff2.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://assets/sprites/shellder/icon.png"
-dest_files=["res://.godot/imported/shellder.png-843d516498ac1c3e86f95d0625ecd26d.ctex"]
+dest_files=["res://.godot/imported/icon.png-a5642c47468b56c63971b526278e7ff2.ctex"]
 
 [params]
 

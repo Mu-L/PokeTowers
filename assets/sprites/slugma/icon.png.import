@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://0jptyaw2sxp"
-path="res://.godot/imported/slugma.png-939503483bdaa23db080692e46a12cc3.ctex"
+path="res://.godot/imported/icon.png-166d1fdc15d0b035d9f00d1a50972cf9.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://assets/sprites/slugma/icon.png"
-dest_files=["res://.godot/imported/slugma.png-939503483bdaa23db080692e46a12cc3.ctex"]
+dest_files=["res://.godot/imported/icon.png-166d1fdc15d0b035d9f00d1a50972cf9.ctex"]
 
 [params]
 

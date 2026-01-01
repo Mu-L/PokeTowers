@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://phhalfgxc41o"
-path="res://.godot/imported/diglett.png-6150ddadbb26371da8665d233cfbbad6.ctex"
+path="res://.godot/imported/icon.png-a36b8ba3783b188b6abb546009c8ca43.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://assets/sprites/diglett/icon.png"
-dest_files=["res://.godot/imported/diglett.png-6150ddadbb26371da8665d233cfbbad6.ctex"]
+dest_files=["res://.godot/imported/icon.png-a36b8ba3783b188b6abb546009c8ca43.ctex"]
 
 [params]
 

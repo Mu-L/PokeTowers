@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c86yssxs7ml83"
-path="res://.godot/imported/mawile.png-d7be35959a71935893f0ba2acce1500c.ctex"
+path="res://.godot/imported/icon.png-63e9e7ce46c9b135c1f60927e0e592b1.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://assets/sprites/mawile/icon.png"
-dest_files=["res://.godot/imported/mawile.png-d7be35959a71935893f0ba2acce1500c.ctex"]
+dest_files=["res://.godot/imported/icon.png-63e9e7ce46c9b135c1f60927e0e592b1.ctex"]
 
 [params]
 

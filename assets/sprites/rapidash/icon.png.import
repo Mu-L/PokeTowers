@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cgo2urqkh4uh4"
-path="res://.godot/imported/rapidash.png-17d21459f49afd28665535a9d7d5f769.ctex"
+path="res://.godot/imported/icon.png-b496d856d1a0954e4f201258dc9df195.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://assets/sprites/rapidash/icon.png"
-dest_files=["res://.godot/imported/rapidash.png-17d21459f49afd28665535a9d7d5f769.ctex"]
+dest_files=["res://.godot/imported/icon.png-b496d856d1a0954e4f201258dc9df195.ctex"]
 
 [params]
 

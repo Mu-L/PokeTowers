@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c3rlbwp5cc5su"
-path="res://.godot/imported/charmander.png-fd653cd4782d408dbe08f511a19aa080.ctex"
+path="res://.godot/imported/icon.png-9a31ff087d991b0a2f0ed5862b386186.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://assets/sprites/charmander/icon.png"
-dest_files=["res://.godot/imported/charmander.png-fd653cd4782d408dbe08f511a19aa080.ctex"]
+dest_files=["res://.godot/imported/icon.png-9a31ff087d991b0a2f0ed5862b386186.ctex"]
 
 [params]
 

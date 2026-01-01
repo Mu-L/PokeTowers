@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://wpcjusjwf7qs"
-path="res://.godot/imported/vulpix.png-4146c1dea06cd6ff42c09fab7daf9085.ctex"
+path="res://.godot/imported/icon.png-315ce8ea7eec75d98eea9aeb78717ae3.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://assets/sprites/vulpix/icon.png"
-dest_files=["res://.godot/imported/vulpix.png-4146c1dea06cd6ff42c09fab7daf9085.ctex"]
+dest_files=["res://.godot/imported/icon.png-315ce8ea7eec75d98eea9aeb78717ae3.ctex"]
 
 [params]
 

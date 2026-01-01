@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cp00nwxpbyd1h"
-path="res://.godot/imported/delibird.png-40a9f44c36ffddb9aaa4e8cdd5b98fde.ctex"
+path="res://.godot/imported/icon.png-56c6032a9fb50d3308c299a1fd2ba0b4.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://assets/sprites/delibird/icon.png"
-dest_files=["res://.godot/imported/delibird.png-40a9f44c36ffddb9aaa4e8cdd5b98fde.ctex"]
+dest_files=["res://.godot/imported/icon.png-56c6032a9fb50d3308c299a1fd2ba0b4.ctex"]
 
 [params]
 

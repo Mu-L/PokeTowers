@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c1gf3swlf7032"
-path="res://.godot/imported/pichu.png-41b9a5ab9b6d23fa8f952b9ecd6029a9.ctex"
+path="res://.godot/imported/icon.png-36ac8688f373891ef2c7d405f50f37d4.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://assets/sprites/pichu/icon.png"
-dest_files=["res://.godot/imported/pichu.png-41b9a5ab9b6d23fa8f952b9ecd6029a9.ctex"]
+dest_files=["res://.godot/imported/icon.png-36ac8688f373891ef2c7d405f50f37d4.ctex"]
 
 [params]
 

@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dcl7l67bwjffl"
-path="res://.godot/imported/seaking.png-f9e062d2032f1941b3cc08ebc77a4507.ctex"
+path="res://.godot/imported/icon.png-91015657fae7b50ca0460cc3a4e4b757.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://assets/sprites/seaking/icon.png"
-dest_files=["res://.godot/imported/seaking.png-f9e062d2032f1941b3cc08ebc77a4507.ctex"]
+dest_files=["res://.godot/imported/icon.png-91015657fae7b50ca0460cc3a4e4b757.ctex"]
 
 [params]
 

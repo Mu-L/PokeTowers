@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c5i1ggfori561"
-path="res://.godot/imported/cloyster.png-fcbf82de0ab9063eb80cef4fb196fe80.ctex"
+path="res://.godot/imported/icon.png-ee20c45e98a9b95ef5552a9df8586ef6.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://assets/sprites/cloyster/icon.png"
-dest_files=["res://.godot/imported/cloyster.png-fcbf82de0ab9063eb80cef4fb196fe80.ctex"]
+dest_files=["res://.godot/imported/icon.png-ee20c45e98a9b95ef5552a9df8586ef6.ctex"]
 
 [params]
 

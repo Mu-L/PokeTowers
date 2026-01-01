@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bww6l7u48lsec"
-path="res://.godot/imported/poochyena.png-b8feecbd02a565e3458090ff1d1b0c5e.ctex"
+path="res://.godot/imported/icon.png-0bee9063dccc2b7c354076eeee23759f.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://assets/sprites/poochyena/icon.png"
-dest_files=["res://.godot/imported/poochyena.png-b8feecbd02a565e3458090ff1d1b0c5e.ctex"]
+dest_files=["res://.godot/imported/icon.png-0bee9063dccc2b7c354076eeee23759f.ctex"]
 
 [params]
 

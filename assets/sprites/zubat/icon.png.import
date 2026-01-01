@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://n5d170u2ophd"
-path="res://.godot/imported/zubat.png-cc3f3d99fb096b75b23a8ba9f9b0bf63.ctex"
+path="res://.godot/imported/icon.png-6a18b98c1340948d1c9baac242565067.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://assets/sprites/zubat/icon.png"
-dest_files=["res://.godot/imported/zubat.png-cc3f3d99fb096b75b23a8ba9f9b0bf63.ctex"]
+dest_files=["res://.godot/imported/icon.png-6a18b98c1340948d1c9baac242565067.ctex"]
 
 [params]
 

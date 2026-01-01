@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://du0me3a24k3q6"
-path="res://.godot/imported/nidorino.png-112ff517f1bc53f68ca29fa26ea1e333.ctex"
+path="res://.godot/imported/icon.png-2e284aefbeb9f34eef353ce1d0306b2b.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://assets/sprites/nidorino/icon.png"
-dest_files=["res://.godot/imported/nidorino.png-112ff517f1bc53f68ca29fa26ea1e333.ctex"]
+dest_files=["res://.godot/imported/icon.png-2e284aefbeb9f34eef353ce1d0306b2b.ctex"]
 
 [params]
 

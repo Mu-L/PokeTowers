@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://vgf3yrs4fsvu"
-path="res://.godot/imported/primeape.png-3ba67bd6bee93f0112c20f3ef98a8137.ctex"
+path="res://.godot/imported/icon.png-c5e83758fb098cbaf314157f9c110699.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://assets/sprites/primeape/icon.png"
-dest_files=["res://.godot/imported/primeape.png-3ba67bd6bee93f0112c20f3ef98a8137.ctex"]
+dest_files=["res://.godot/imported/icon.png-c5e83758fb098cbaf314157f9c110699.ctex"]
 
 [params]
 

@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dgfkgdofwjxt"
-path="res://.godot/imported/spearow.png-08969c1895b70e5e0b0a906345cc85a3.ctex"
+path="res://.godot/imported/icon.png-76e1ff0a65f3dc933c4766b7a2184be0.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://assets/sprites/spearow/icon.png"
-dest_files=["res://.godot/imported/spearow.png-08969c1895b70e5e0b0a906345cc85a3.ctex"]
+dest_files=["res://.godot/imported/icon.png-76e1ff0a65f3dc933c4766b7a2184be0.ctex"]
 
 [params]
 

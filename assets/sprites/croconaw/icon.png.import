@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://8k533d44jnss"
-path="res://.godot/imported/croconaw.png-68ac12757b3edf03013f4993b3239b99.ctex"
+path="res://.godot/imported/icon.png-36841fcb3c99231158c202875a8e58b5.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://assets/sprites/croconaw/icon.png"
-dest_files=["res://.godot/imported/croconaw.png-68ac12757b3edf03013f4993b3239b99.ctex"]
+dest_files=["res://.godot/imported/icon.png-36841fcb3c99231158c202875a8e58b5.ctex"]
 
 [params]
 

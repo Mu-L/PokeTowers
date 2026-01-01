@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://u38k6u36w21i"
-path="res://.godot/imported/electabuzz.png-92d1dc680c6e65735401e4a6c8efce22.ctex"
+path="res://.godot/imported/icon.png-7b64c47de63e0e4effa251a63780d4f4.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://assets/sprites/electabuzz/icon.png"
-dest_files=["res://.godot/imported/electabuzz.png-92d1dc680c6e65735401e4a6c8efce22.ctex"]
+dest_files=["res://.godot/imported/icon.png-7b64c47de63e0e4effa251a63780d4f4.ctex"]
 
 [params]
 

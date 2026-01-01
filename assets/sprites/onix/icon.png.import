@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c3y2sup410e8j"
-path="res://.godot/imported/onix.png-a0cc7218eddc880607ae194fc1ebfe28.ctex"
+path="res://.godot/imported/icon.png-680fb54ebc2e2cb1ca1b4ea2e8953cd7.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://assets/sprites/onix/icon.png"
-dest_files=["res://.godot/imported/onix.png-a0cc7218eddc880607ae194fc1ebfe28.ctex"]
+dest_files=["res://.godot/imported/icon.png-680fb54ebc2e2cb1ca1b4ea2e8953cd7.ctex"]
 
 [params]
 

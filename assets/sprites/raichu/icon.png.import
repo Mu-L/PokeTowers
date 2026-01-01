@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bhxs6lw7igxxp"
-path="res://.godot/imported/raichu.png-21c6ff20f3d2a74f6c8283db824b1b19.ctex"
+path="res://.godot/imported/icon.png-45ccc026fd774c244c422ffb4320e1bf.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://assets/sprites/raichu/icon.png"
-dest_files=["res://.godot/imported/raichu.png-21c6ff20f3d2a74f6c8283db824b1b19.ctex"]
+dest_files=["res://.godot/imported/icon.png-45ccc026fd774c244c422ffb4320e1bf.ctex"]
 
 [params]
 

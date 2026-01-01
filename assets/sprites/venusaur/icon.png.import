@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dljywjhi58x06"
-path="res://.godot/imported/venusaur.png-21f5c356c24232e257bd173e6d419d3d.ctex"
+path="res://.godot/imported/icon.png-a151149d46afb391b3d7adb3ec91e80a.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://assets/sprites/venusaur/icon.png"
-dest_files=["res://.godot/imported/venusaur.png-21f5c356c24232e257bd173e6d419d3d.ctex"]
+dest_files=["res://.godot/imported/icon.png-a151149d46afb391b3d7adb3ec91e80a.ctex"]
 
 [params]
 

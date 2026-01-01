@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://snffnv63beor"
-path="res://.godot/imported/farfetchd.png-9883740be8b1924fa20c12e8d01b1340.ctex"
+path="res://.godot/imported/icon.png-ce3b2f1228ff262b10ef2d29ee26748a.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://assets/sprites/farfetchd/icon.png"
-dest_files=["res://.godot/imported/farfetchd.png-9883740be8b1924fa20c12e8d01b1340.ctex"]
+dest_files=["res://.godot/imported/icon.png-ce3b2f1228ff262b10ef2d29ee26748a.ctex"]
 
 [params]
 

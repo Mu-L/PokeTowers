@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cqltrpqsaiuhs"
-path="res://.godot/imported/donphan.png-912ee9341038f72065dde4ea6d92421b.ctex"
+path="res://.godot/imported/icon.png-8535963f4e335a5cd94f89f9409c9ead.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://assets/sprites/donphan/icon.png"
-dest_files=["res://.godot/imported/donphan.png-912ee9341038f72065dde4ea6d92421b.ctex"]
+dest_files=["res://.godot/imported/icon.png-8535963f4e335a5cd94f89f9409c9ead.ctex"]
 
 [params]
 

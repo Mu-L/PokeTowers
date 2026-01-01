@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://do8kwjaei1ex0"
-path="res://.godot/imported/sharpedo.png-a493bdef3b53f6230d25319667963a51.ctex"
+path="res://.godot/imported/icon.png-456d8a9157fa6f3d9ce7ad1cd8219628.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://assets/sprites/sharpedo/icon.png"
-dest_files=["res://.godot/imported/sharpedo.png-a493bdef3b53f6230d25319667963a51.ctex"]
+dest_files=["res://.godot/imported/icon.png-456d8a9157fa6f3d9ce7ad1cd8219628.ctex"]
 
 [params]
 

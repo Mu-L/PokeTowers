@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cuylvaykubhti"
-path="res://.godot/imported/jolteon.png-bb345118707144be13eeefd4f03568ac.ctex"
+path="res://.godot/imported/icon.png-e495f938832892a950ea5c0f3a2de7b3.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://assets/sprites/jolteon/icon.png"
-dest_files=["res://.godot/imported/jolteon.png-bb345118707144be13eeefd4f03568ac.ctex"]
+dest_files=["res://.godot/imported/icon.png-e495f938832892a950ea5c0f3a2de7b3.ctex"]
 
 [params]
 

@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bq4ddo5w7omsb"
-path="res://.godot/imported/krabby.png-3d999a24bb68949cd3aa552cc1a5db52.ctex"
+path="res://.godot/imported/icon.png-e6193e59cc6f010e654e20471c61f7bd.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://assets/sprites/krabby/icon.png"
-dest_files=["res://.godot/imported/krabby.png-3d999a24bb68949cd3aa552cc1a5db52.ctex"]
+dest_files=["res://.godot/imported/icon.png-e6193e59cc6f010e654e20471c61f7bd.ctex"]
 
 [params]
 

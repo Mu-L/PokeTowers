@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://rw80qao24rp7"
-path="res://.godot/imported/kabuto.png-13d6194ef6c26408cabe7a2558364a50.ctex"
+path="res://.godot/imported/icon.png-4c9b7ac75b390df0dc4a46ab5243c4d2.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://assets/sprites/kabuto/icon.png"
-dest_files=["res://.godot/imported/kabuto.png-13d6194ef6c26408cabe7a2558364a50.ctex"]
+dest_files=["res://.godot/imported/icon.png-4c9b7ac75b390df0dc4a46ab5243c4d2.ctex"]
 
 [params]
 

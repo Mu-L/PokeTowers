@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c1vpo8ejftmsd"
-path="res://.godot/imported/wooper.png-84102ccb3812ea33a0be48dde4ea1d95.ctex"
+path="res://.godot/imported/icon.png-32cd8775c0bbf121c7a9b27f51c8070c.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://assets/sprites/wooper/icon.png"
-dest_files=["res://.godot/imported/wooper.png-84102ccb3812ea33a0be48dde4ea1d95.ctex"]
+dest_files=["res://.godot/imported/icon.png-32cd8775c0bbf121c7a9b27f51c8070c.ctex"]
 
 [params]
 

@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://vqu4ttq73lqw"
-path="res://.godot/imported/dragonite.png-3e572cccb3dc941b597cee20b8bf42c4.ctex"
+path="res://.godot/imported/icon.png-a7e6ffe0babb157d58bc2db51f6b4852.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://assets/sprites/dragonite/icon.png"
-dest_files=["res://.godot/imported/dragonite.png-3e572cccb3dc941b597cee20b8bf42c4.ctex"]
+dest_files=["res://.godot/imported/icon.png-a7e6ffe0babb157d58bc2db51f6b4852.ctex"]
 
 [params]
 
