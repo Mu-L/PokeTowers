@@ -1,7 +1,7 @@
 extends PathFollow2D
 class_name BaseEnemy
 
-signal died(enemy: BaseEnemy)
+signal died(enemy: BaseEnemy, killer: BaseTower)
 
 @export var species_id: String = ""
 
@@ -12,8 +12,14 @@ var reward: int = 15
 var pokemon_type: GameManager.PokemonType = GameManager.PokemonType.NORMAL
 var catch_rate: float = 0.5
 
+# Defense stats for damage calculation
+var defense: int = 10
+var spec_defense: int = 10
+var enemy_level: int = 1
+
 var hp: float
 var catch_attempted: bool = false
+var last_attacker: BaseTower = null  # Track who dealt killing blow
 var slow_timer: float = 0.0
 var slow_amount: float = 1.0
 var poison_damage: float = 0.0
@@ -43,11 +49,22 @@ func load_species_data() -> void:
 	pokemon_type = species.pokemon_type
 	catch_rate = species.catch_rate
 
+	# Calculate defense stats using Pokemon formula
+	# Random IV for enemies (0-15 for simpler enemies)
+	var iv_def = randi_range(0, 15)
+	var iv_spec_def = randi_range(0, 15)
+	defense = calc_stat(species.base_defense, iv_def)
+	spec_defense = calc_stat(species.base_spec_defense, iv_spec_def)
+
 	# Set up sprite - animated if sheet exists, static otherwise
 	if species.sprite_sheet:
 		setup_animated_sprite(species)
 	elif species.icon and sprite:
 		sprite.texture = species.icon
+
+# Pokemon stat formula: ((base + IV) × 2) × level / 100 + 5
+func calc_stat(base: int, iv: int) -> int:
+	return int(((base + iv) * 2.0) * enemy_level / 100.0) + 5
 
 func setup_animated_sprite(species: PokemonSpecies) -> void:
 	if sprite:
@@ -55,7 +72,7 @@ func setup_animated_sprite(species: PokemonSpecies) -> void:
 
 	animated_sprite = AnimatedSprite2D.new()
 	animated_sprite.sprite_frames = create_sprite_frames(species)
-	animated_sprite.scale = Vector2(0.5, 0.5)  # Match original sprite scale
+	animated_sprite.scale = Vector2(2.0, 2.0)  # Same scale as towers
 	add_child(animated_sprite)
 	animated_sprite.play("idle")
 
@@ -131,10 +148,19 @@ func show_catch_effect(success: bool) -> void:
 		label.add_theme_color_override("font_color", Color(0.7, 0.7, 0.7))
 		get_viewport().add_child(label)
 
-func take_damage(amount: float, attacker_type: GameManager.PokemonType = GameManager.PokemonType.NORMAL, show_number: bool = true) -> void:
+func take_damage(amount: float, attacker_type: GameManager.PokemonType = GameManager.PokemonType.NORMAL, show_number: bool = true, attacker: BaseTower = null) -> void:
 	var multiplier = GameManager.get_type_multiplier(attacker_type, pokemon_type)
 	var actual_damage = amount * multiplier
+	_apply_damage(actual_damage, multiplier, show_number, attacker)
+
+# Take pre-calculated damage (type effectiveness already applied)
+func take_calculated_damage(amount: float, type_multiplier: float = 1.0, show_number: bool = true, attacker: BaseTower = null) -> void:
+	_apply_damage(amount, type_multiplier, show_number, attacker)
+
+func _apply_damage(actual_damage: float, multiplier: float, show_number: bool, attacker: BaseTower = null) -> void:
 	hp -= actual_damage
+	if attacker:
+		last_attacker = attacker
 	update_hp_bar()
 
 	# Floating damage number (skip for small DOT ticks)
@@ -169,7 +195,7 @@ func update_hp_bar() -> void:
 		hp_bar.value = (hp / max_hp) * 100
 
 func die() -> void:
-	died.emit(self)
+	died.emit(self, last_attacker)
 	GameManager.unregister_enemy(true, reward)
 	queue_free()
 

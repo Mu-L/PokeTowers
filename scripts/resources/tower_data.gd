@@ -6,7 +6,6 @@ var tower_id: String:  # Alias for compatibility
 	set(v): id = v
 @export var display_name: String = ""
 @export var pokemon_type: GameManager.PokemonType = GameManager.PokemonType.NORMAL
-@export var cost: int = 100
 @export var damage: float = 10.0
 @export var attack_range: float = 150.0
 @export var attack_speed: float = 1.0

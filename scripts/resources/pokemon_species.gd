@@ -11,7 +11,6 @@ class_name PokemonSpecies
 @export var base_damage: float = 10.0
 @export var base_range: float = 150.0
 @export var base_attack_speed: float = 1.0
-@export var deploy_cost: int = 100
 @export var tower_scene: PackedScene
 
 # Enemy stats
@@ -32,10 +31,25 @@ class_name PokemonSpecies
 
 # Animation
 @export_group("Animation")
-@export var sprite_sheet: Texture2D  # spritesheet with 8 rows, N columns
+@export var sprite_sheet: Texture2D  # idle/walk spritesheet
 @export var frame_size: Vector2i = Vector2i(96, 96)
 @export var frame_columns: int = 4
 @export var anim_fps: float = 8.0
+@export var attack_sheet: Texture2D  # attack spritesheet
+@export var attack_frame_size: Vector2i = Vector2i(64, 72)
+@export var attack_frame_columns: int = 11
+
+# Base Stats (for damage calculation)
+@export_group("Base Stats")
+@export var base_phys_attack: int = 50
+@export var base_spec_attack: int = 50
+@export var base_defense: int = 50
+@export var base_spec_defense: int = 50
+@export var base_stat_speed: int = 50  # Attack speed stat (not movement)
+
+# Learnset: level -> move_id
+@export_group("Learnset")
+@export var learnset: Dictionary = {}
 
 func get_type_name() -> String:
 	match pokemon_type:

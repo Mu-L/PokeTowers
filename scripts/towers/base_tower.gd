@@ -14,6 +14,7 @@ var enemies_in_range: Array[BaseEnemy] = []
 
 # For caught pokemon deployed as towers
 var caught_pokemon: CaughtPokemon = null
+var pending_indicator: Label = null
 
 @onready var sprite: Sprite2D = $Sprite2D
 @onready var range_area: Area2D = $RangeArea
@@ -23,6 +24,41 @@ var caught_pokemon: CaughtPokemon = null
 func _ready() -> void:
 	setup_range()
 	hide_range_indicator()
+	setup_click_detection()
+	setup_pending_indicator()
+
+func setup_click_detection() -> void:
+	var click_area = Area2D.new()
+	click_area.name = "ClickArea"
+	click_area.collision_layer = 0
+	click_area.collision_mask = 0
+	click_area.input_pickable = true
+
+	var shape = CollisionShape2D.new()
+	var circle = CircleShape2D.new()
+	circle.radius = 25.0
+	shape.shape = circle
+	click_area.add_child(shape)
+	add_child(click_area)
+
+	click_area.input_event.connect(_on_click_input)
+
+func _on_click_input(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
+	if event is InputEventMouseButton:
+		var mouse = event as InputEventMouseButton
+		if mouse.button_index == MOUSE_BUTTON_LEFT and mouse.pressed:
+			GameManager.select_placed_tower(self)
+
+func setup_pending_indicator() -> void:
+	pending_indicator = Label.new()
+	pending_indicator.text = "!"
+	pending_indicator.add_theme_font_size_override("font_size", 20)
+	pending_indicator.add_theme_color_override("font_color", Color(1, 0.85, 0.2))
+	pending_indicator.add_theme_color_override("font_outline_color", Color(0, 0, 0))
+	pending_indicator.add_theme_constant_override("outline_size", 3)
+	pending_indicator.position = Vector2(15, -35)
+	pending_indicator.visible = false
+	add_child(pending_indicator)
 
 func setup_range() -> void:
 	if range_shape and range_shape.shape is CircleShape2D:
@@ -40,6 +76,10 @@ func _process(delta: float) -> void:
 			attack(target)
 	else:
 		find_new_target()
+
+	# Update pending move indicator
+	if pending_indicator and caught_pokemon:
+		pending_indicator.visible = caught_pokemon.has_pending_moves()
 
 func look_at_target() -> void:
 	if target and sprite:
@@ -66,7 +106,12 @@ func attack(enemy: BaseEnemy) -> void:
 
 func deal_damage(enemy: BaseEnemy, amount: float) -> void:
 	if enemy and is_instance_valid(enemy):
-		enemy.take_damage(amount, pokemon_type)
+		enemy.take_damage(amount, pokemon_type, true, self)
+
+# Deal pre-calculated damage (type effectiveness already applied)
+func deal_calculated_damage(enemy: BaseEnemy, amount: float, type_multiplier: float = 1.0) -> void:
+	if enemy and is_instance_valid(enemy):
+		enemy.take_calculated_damage(amount, type_multiplier, true, self)
 
 func show_range_indicator() -> void:
 	if range_indicator:
@@ -90,13 +135,13 @@ func _on_range_area_area_exited(area: Area2D) -> void:
 		if target == enemy:
 			target = null
 
-func _on_enemy_died(enemy: BaseEnemy) -> void:
+func _on_enemy_died(enemy: BaseEnemy, killer: BaseTower) -> void:
 	enemies_in_range.erase(enemy)
 	if target == enemy:
 		target = null
 
-	# XP gain for caught pokemon towers
-	if caught_pokemon:
+	# XP only goes to the killer's CaughtPokemon
+	if killer == self and caught_pokemon:
 		var xp_gain = calculate_xp_gain(enemy)
 		if caught_pokemon.add_xp(xp_gain):
 			on_level_up()

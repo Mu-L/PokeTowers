@@ -1,22 +1,20 @@
 extends Node
 
-signal currency_changed(new_amount: int)
 signal lives_changed(new_amount: int)
 signal wave_changed(wave_num: int)
 signal wave_completed()
 signal game_over(won: bool)
 signal enemy_killed(enemy: Node2D, reward: int)
 signal enemy_selected(enemy: Node2D)
-signal pokemon_caught(species_id: String)
+signal pokemon_caught(pokemon: CaughtPokemon)
 signal catch_failed(species_id: String)
 signal pokemon_evolved(old_species: String, new_species: String)
+signal tower_selected(tower: Node2D)
+signal tower_deselected()
+signal zenny_changed(amount: int)
+signal pokemon_placed_signal(uuid: String)
 
 # Game state
-var currency: int = 200:
-	set(value):
-		currency = value
-		currency_changed.emit(currency)
-
 var lives: int = 20:
 	set(value):
 		lives = max(0, value)
@@ -46,21 +44,36 @@ var type_chart: Dictionary = {
 var selected_tower_type: String = ""
 var is_placing_tower: bool = false
 var selected_caught_pokemon: CaughtPokemon = null
+var selected_tower: Node2D = null  # Currently selected placed tower
 
 # Map editor
 var selected_map_name: String = ""
 var selected_map_bg: String = ""
+var editing_map_data: MapData = null
 
 # Selected map for gameplay
 var selected_map: MapData = null
 
-# Pokemon collection (one per species)
-var pokedex: Dictionary = {}  # species_id -> CaughtPokemon
+# Pokemon collection (individual Pokemon)
+var pokedex: Dictionary = {}  # uuid -> CaughtPokemon
 var pokedex_seen: Array[String] = []
-var starter_pokemon: String = ""
-var available_pokemon: Array[String] = []  # Snapshot at game start
-var party: Array[String] = []  # Selected party for current game (max 6)
-const PARTY_SIZE = 6
+var starter_pokemon: String = ""  # uuid of starter
+var party: Array[String] = []  # uuids of party Pokemon
+var species_catch_counts: Dictionary = {}  # species_id -> int (for #1, #2 naming)
+
+# Party size system
+var party_size_limit: int = 6
+const MAX_PARTY_SIZE = 32
+
+# Progression tracking
+var completed_maps: Array[String] = []  # map_ids
+var unlocked_generations: Array[int] = [1]  # gen numbers
+
+# Meta-currency (earned on run completion)
+var zenny: int = 0
+
+# Placement tracking (prevents placing same individual twice)
+var placed_pokemon_uuids: Array[String] = []
 
 # Ball settings
 var selected_ball: String = "pokeball"
@@ -69,9 +82,13 @@ var ball_types: Dictionary = {}  # id -> BallData
 # Species registry
 var species_registry: Dictionary = {}  # id -> PokemonSpecies
 
+# Move registry
+var move_registry: Dictionary = {}  # id -> MoveData
+
 func _ready() -> void:
 	load_ball_types()
 	load_species_registry()
+	load_move_registry()
 
 func load_ball_types() -> void:
 	ball_types["pokeball"] = preload("res://resources/balls/pokeball.tres")
@@ -91,8 +108,23 @@ func load_species_registry() -> void:
 					species_registry[species.id] = species
 			file_name = dir.get_next()
 
+func load_move_registry() -> void:
+	var dir = DirAccess.open("res://resources/moves")
+	if dir:
+		dir.list_dir_begin()
+		var file_name = dir.get_next()
+		while file_name != "":
+			if file_name.ends_with(".tres"):
+				var move = load("res://resources/moves/" + file_name) as MoveData
+				if move:
+					move_registry[move.id] = move
+			file_name = dir.get_next()
+
 func get_species(species_id: String) -> PokemonSpecies:
 	return species_registry.get(species_id)
+
+func get_move(move_id: String) -> MoveData:
+	return move_registry.get(move_id)
 
 func get_ball(ball_id: String) -> BallData:
 	return ball_types.get(ball_id)
@@ -101,26 +133,62 @@ func mark_seen(species_id: String) -> void:
 	if species_id not in pokedex_seen:
 		pokedex_seen.append(species_id)
 
+# Check if we have at least one of this species
 func is_caught(species_id: String) -> bool:
-	return species_id in pokedex
+	for pokemon in pokedex.values():
+		if pokemon.species_id == species_id:
+			return true
+	return false
+
+# Get Pokemon by UUID
+func get_pokemon_by_uuid(uuid: String) -> CaughtPokemon:
+	return pokedex.get(uuid)
+
+# Get all caught Pokemon of a species
+func get_all_of_species(species_id: String) -> Array[CaughtPokemon]:
+	var result: Array[CaughtPokemon] = []
+	for pokemon in pokedex.values():
+		if pokemon.species_id == species_id:
+			result.append(pokemon)
+	return result
+
+# Get next catch number for a species
+func get_next_catch_number(species_id: String) -> int:
+	if species_id not in species_catch_counts:
+		species_catch_counts[species_id] = 0
+	species_catch_counts[species_id] += 1
+	return species_catch_counts[species_id]
+
+# Check if individual is already placed this game
+func is_pokemon_placed(uuid: String) -> bool:
+	return uuid in placed_pokemon_uuids
+
+# Mark individual as placed
+func mark_pokemon_placed(uuid: String) -> void:
+	if uuid not in placed_pokemon_uuids:
+		placed_pokemon_uuids.append(uuid)
+		pokemon_placed_signal.emit(uuid)
 
 func catch_pokemon(enemy: Node) -> bool:
 	var species_id = enemy.species_id if "species_id" in enemy else ""
-	if species_id == "" or species_id in pokedex:
-		return false  # Already caught or no species
+	if species_id == "":
+		return false
 
 	var ball = ball_types.get(selected_ball) as BallData
-	if not ball or currency < ball.cost:
+	if not ball or zenny < ball.cost:
 		return false  # Can't afford
 
-	spend_currency(ball.cost)
+	spend_zenny(ball.cost)
 
 	var catch_rate = calculate_catch_rate(enemy, ball)
 	if randf() < catch_rate:
 		var caught = CaughtPokemon.new()
 		caught.species_id = species_id
-		pokedex[species_id] = caught
-		pokemon_caught.emit(species_id)
+		caught.catch_number = get_next_catch_number(species_id)
+		caught.generate_random_ivs()
+		caught.learn_moves_for_level()
+		pokedex[caught.uuid] = caught  # Key by uuid
+		pokemon_caught.emit(caught)
 		SaveManager.save_game()
 		return true
 	else:
@@ -144,14 +212,37 @@ func get_type_multiplier(attacker_type: PokemonType, defender_type: PokemonType)
 			return type_chart[attacker_type][defender_type]
 	return 1.0
 
-func add_currency(amount: int) -> void:
-	currency += amount
+# Pokemon damage formula
+func calc_damage(attacker: CaughtPokemon, move: MoveData, defender_def: int, defender_spec_def: int, defender_type: PokemonType) -> int:
+	if not attacker or not move:
+		return 0
 
-func spend_currency(amount: int) -> bool:
-	if currency >= amount:
-		currency -= amount
-		return true
-	return false
+	var atk_stat: int
+	var def_stat: int
+
+	if move.category == MoveData.Category.PHYSICAL:
+		atk_stat = attacker.get_phys_attack()
+		def_stat = defender_def
+	else:
+		atk_stat = attacker.get_spec_attack()
+		def_stat = defender_spec_def
+
+	# Prevent division by zero
+	if def_stat <= 0:
+		def_stat = 1
+
+	# Pokemon damage formula
+	var damage = ((2.0 * attacker.level / 5.0 + 2.0) * move.power * atk_stat / def_stat) / 50.0 + 2.0
+
+	# Type effectiveness
+	damage *= get_type_multiplier(move.move_type, defender_type)
+
+	# STAB (Same Type Attack Bonus)
+	var species = get_species(attacker.species_id)
+	if species and move.move_type == species.pokemon_type:
+		damage *= 1.5
+
+	return int(max(1, damage))
 
 func lose_life(amount: int = 1) -> void:
 	lives -= amount
@@ -159,10 +250,8 @@ func lose_life(amount: int = 1) -> void:
 func register_enemy() -> void:
 	enemies_alive += 1
 
-func unregister_enemy(was_killed: bool, reward: int = 0) -> void:
+func unregister_enemy(was_killed: bool, _reward: int = 0) -> void:
 	enemies_alive -= 1
-	if was_killed:
-		add_currency(reward)
 	if enemies_alive <= 0 and is_wave_active:
 		is_wave_active = false
 		check_wave_complete()
@@ -179,17 +268,42 @@ func start_wave() -> void:
 		wave_changed.emit(current_wave)
 
 func reset_game() -> void:
-	currency = 200
 	lives = 20
 	current_wave = 0
 	is_wave_active = false
 	enemies_alive = 0
 	selected_tower_type = ""
 	is_placing_tower = false
-	# Snapshot pokedex - caught pokemon available for next game
-	available_pokemon.clear()
-	for key in pokedex.keys():
-		available_pokemon.append(key)
+	placed_pokemon_uuids.clear()
+
+# Zenny functions
+func add_zenny(amount: int) -> void:
+	zenny += amount
+	zenny_changed.emit(zenny)
+	SaveManager.save_game()
+
+func spend_zenny(amount: int) -> bool:
+	if zenny >= amount:
+		zenny -= amount
+		zenny_changed.emit(zenny)
+		SaveManager.save_game()
+		return true
+	return false
+
+func get_party_upgrade_cost() -> int:
+	if party_size_limit >= MAX_PARTY_SIZE:
+		return -1
+	return 1000 + (party_size_limit - 5) * 1000  # 2000, 3000, 4000...
+
+func upgrade_party_size() -> bool:
+	var cost = get_party_upgrade_cost()
+	if cost < 0 or zenny < cost:
+		return false
+	zenny -= cost
+	party_size_limit += 1
+	zenny_changed.emit(zenny)
+	SaveManager.save_game()
+	return true
 
 func select_tower(tower_type: String) -> void:
 	selected_tower_type = tower_type
@@ -199,3 +313,43 @@ func cancel_placement() -> void:
 	selected_tower_type = ""
 	is_placing_tower = false
 	selected_caught_pokemon = null
+
+func select_placed_tower(tower: Node2D) -> void:
+	if selected_tower != tower:
+		selected_tower = tower
+		tower_selected.emit(tower)
+
+func deselect_tower() -> void:
+	if selected_tower:
+		selected_tower = null
+		tower_deselected.emit()
+
+# Progression functions
+func is_map_completed(map_id: String) -> bool:
+	return map_id in completed_maps
+
+func complete_map(map_id: String) -> void:
+	if map_id != "" and map_id not in completed_maps:
+		completed_maps.append(map_id)
+		SaveManager.save_game()
+
+func is_map_unlocked(campaign: CampaignData, map_index: int) -> bool:
+	if map_index == 0:
+		return is_generation_unlocked(campaign.generation)
+	var prev_map = campaign.maps[map_index - 1]
+	return is_map_completed(prev_map.get_id())
+
+func is_generation_unlocked(gen: int) -> bool:
+	return gen in unlocked_generations
+
+func unlock_generation(gen: int) -> void:
+	if gen not in unlocked_generations:
+		unlocked_generations.append(gen)
+		SaveManager.save_game()
+
+func get_campaign_progress(campaign: CampaignData) -> int:
+	var count = 0
+	for m in campaign.maps:
+		if is_map_completed(m.get_id()):
+			count += 1
+	return count

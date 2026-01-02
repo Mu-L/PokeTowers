@@ -1,8 +1,9 @@
-[gd_resource type="Resource" script_class="PokemonSpecies" load_steps=4 format=3]
+[gd_resource type="Resource" script_class="PokemonSpecies" load_steps=5 format=3]
 
 [ext_resource type="Script" path="res://scripts/resources/pokemon_species.gd" id="1_script"]
 [ext_resource type="PackedScene" uid="uid://cgeneric_pokemon_tower" path="res://scenes/towers/generic_pokemon.tscn" id="2_tower"]
 [ext_resource type="Texture2D" uid="uid://metapod_sprite" path="res://assets/sprites/metapod/icon.png" id="3_icon"]
+[ext_resource type="Texture2D" path="res://assets/sprites/metapod/spritesheets/idle.png" id="4_sheet"]
 
 [resource]
 script = ExtResource("1_script")
@@ -21,3 +22,13 @@ reward = 25
 evolves_to = "butterfree"
 evolve_level = 10
 catch_rate = 0.5
+sprite_sheet = ExtResource("4_sheet")
+frame_size = Vector2i(40, 48)
+frame_columns = 8
+anim_fps = 8.0
+base_phys_attack = 20
+base_spec_attack = 25
+base_defense = 55
+base_spec_defense = 25
+base_stat_speed = 30
+learnset = {1: "tackle"}

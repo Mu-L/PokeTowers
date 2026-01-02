@@ -29,7 +29,10 @@ func hit_enemy(enemy: BaseEnemy) -> void:
 			if e is BaseEnemy:
 				var dist = e.global_position.distance_to(hit_pos)
 				var damage_mult = 1.0 - (dist / aoe_radius) * 0.5
-				e.take_damage(damage * damage_mult, pokemon_type)
+				if is_precalculated:
+					e.take_calculated_damage(damage * damage_mult, type_multiplier, true, owner_tower)
+				else:
+					e.take_damage(damage * damage_mult, pokemon_type, true, owner_tower)
 
 func create_impact_effect(pos: Vector2) -> void:
 	# Explosion circle

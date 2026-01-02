@@ -1,13 +1,13 @@
-[gd_resource type="Resource" script_class="MapData" load_steps=2 format=3]
+[gd_resource type="Resource" script_class="MapData" load_steps=3 format=3]
 
 [ext_resource type="Script" path="res://scripts/resources/map_data.gd" id="1_script"]
+[ext_resource type="Texture2D" path="res://assets/maps/route_1_bg.png" id="2_bg"]
 
 [resource]
 script = ExtResource("1_script")
 map_name = "Route 1"
 description = "The first route between Pallet Town and Viridian City"
-difficulty = 1
-path_points = PackedVector2Array(50, 360, 200, 360, 200, 200, 400, 200, 400, 500, 600, 500, 600, 300, 830, 300)
-zones = PackedVector2Array(100, 300, 100, 400, 100, 450, 250, 150, 300, 150, 350, 150, 300, 250, 450, 250, 450, 450, 500, 450, 550, 450, 650, 250, 700, 250, 750, 250, 700, 350, 750, 400)
-zone_size = 40
+background = ExtResource("2_bg")
+path_points = PackedVector2Array(150.6542, 7.4766355, 150.6542, 98.31776, 598.50464, 98.31776, 598.50464, 333.0841, 323.7383, 333.0841, 323.7383, 487.85046, 529.3458, 487.85046, 529.3458, 684.1122)
+zones = PackedVector2Array(158.13084, 176.4486, 229.15887, 174.20561, 303.5514, 172.71028, 380.18692, 173.83177, 457.944, 173.0841, 670.6542, 104.299065, 670.6542, 202.99066, 671.40186, 312.14954, 211.96262, 441.86917, 210.84113, 517.757, 595.8878, 439.62616, 602.24304, 527.4766, 240, 333.8318, 239.25235, 248.97197, 321.49533, 253.08412, 401.1215, 253.83177, 481.86917, 254.57944, 548.03735, 253.45795, 533.458, 171.21495)
 waves_count = 8

@@ -9,7 +9,10 @@ func _ready() -> void:
 	pokemon_type = GameManager.PokemonType.WATER
 
 func hit_enemy(enemy: BaseEnemy) -> void:
-	enemy.take_damage(damage, pokemon_type)
+	if is_precalculated:
+		enemy.take_calculated_damage(damage, type_multiplier, true, owner_tower)
+	else:
+		enemy.take_damage(damage, pokemon_type, true, owner_tower)
 	enemy.apply_slow(slow_amount, slow_duration)
 	create_impact_effect(enemy.global_position)
 

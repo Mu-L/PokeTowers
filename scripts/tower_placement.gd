@@ -162,9 +162,6 @@ func place_tower() -> void:
 	if not species or not species.tower_scene:
 		return
 
-	if not GameManager.spend_currency(species.deploy_cost):
-		return
-
 	var tower = species.tower_scene.instantiate()
 	tower.global_position = current_zone.global_position
 
@@ -176,5 +173,9 @@ func place_tower() -> void:
 
 	# Mark zone as occupied
 	occupied_zones[current_zone] = tower
+
+	# Mark this individual Pokemon as placed (1:1 system)
+	# This emits pokemon_placed_signal from GameManager
+	GameManager.mark_pokemon_placed(caught.uuid)
 
 	GameManager.cancel_placement()

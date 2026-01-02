@@ -81,29 +81,32 @@ func create_starter_card(data: Dictionary) -> PanelContainer:
 	glow.set_anchors_preset(Control.PRESET_CENTER)
 	glow_container.add_child(glow)
 
-	# Pedestal
-	var pedestal = ColorRect.new()
-	pedestal.custom_minimum_size = Vector2(120, 20)
-	pedestal.color = Color(0.2, 0.22, 0.28)
-	pedestal.set_anchors_preset(Control.PRESET_CENTER)
-	pedestal.position.y = 60
-	glow_container.add_child(pedestal)
-
 	# Large sprite
 	var sprite_container = CenterContainer.new()
 	sprite_container.custom_minimum_size = Vector2(140, 140)
 	glow_container.add_child(sprite_container)
 
-	var sprite = TextureRect.new()
-	sprite.custom_minimum_size = Vector2(120, 120)
-	sprite.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
-	sprite.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
-	sprite.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
-	var sprite_path = "res://assets/sprites/%s/icon.png" % data.id
-	if ResourceLoader.exists(sprite_path):
-		sprite.texture = load(sprite_path)
-	sprite_container.add_child(sprite)
-	panel.set_meta("sprite", sprite)
+	# Check if species has sprite sheet for animation
+	var species = GameManager.get_species(data.id)
+	if species and species.sprite_sheet:
+		var anim_sprite = AnimatedSprite2D.new()
+		anim_sprite.sprite_frames = create_sprite_frames(species)
+		anim_sprite.scale = Vector2(3.0, 3.0)  # Scale up for UI
+		anim_sprite.position = Vector2(70, 70)  # Center in container
+		sprite_container.add_child(anim_sprite)
+		anim_sprite.play("idle")
+		panel.set_meta("sprite", anim_sprite)
+	else:
+		var sprite = TextureRect.new()
+		sprite.custom_minimum_size = Vector2(120, 120)
+		sprite.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+		sprite.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+		sprite.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
+		var sprite_path = "res://assets/sprites/%s/icon.png" % data.id
+		if ResourceLoader.exists(sprite_path):
+			sprite.texture = load(sprite_path)
+		sprite_container.add_child(sprite)
+		panel.set_meta("sprite", sprite)
 
 	# Name
 	var name_label = Label.new()
@@ -199,7 +202,7 @@ func style_buttons() -> void:
 
 	back_btn.add_theme_color_override("font_color", Color(0.8, 0.8, 0.85))
 
-func _on_card_input(event: InputEvent, starter_id: String, panel: PanelContainer) -> void:
+func _on_card_input(event: InputEvent, starter_id: String, _panel: PanelContainer) -> void:
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 		select_card(starter_id)
 		# Double click to start
@@ -253,12 +256,19 @@ func confirm_selection() -> void:
 
 	var caught = CaughtPokemon.new()
 	caught.species_id = selected_id
+	caught.catch_number = GameManager.get_next_catch_number(selected_id)
 	caught.level = 5
-	GameManager.pokedex[selected_id] = caught
-	GameManager.starter_pokemon = selected_id
+	caught.generate_random_ivs()
+	caught.learn_moves_for_level()
+	# Store by UUID (individual Pokemon system)
+	GameManager.pokedex[caught.uuid] = caught
+	GameManager.starter_pokemon = caught.uuid
 	# Add to party so it's available as tower
-	if selected_id not in GameManager.party:
-		GameManager.party.append(selected_id)
+	if caught.uuid not in GameManager.party:
+		GameManager.party.append(caught.uuid)
+	# Give starting Zenny for new players
+	if GameManager.zenny == 0:
+		GameManager.zenny = 500
 	SaveManager.save_game()
 	get_tree().change_scene_to_file("res://scenes/ui/campaign_select.tscn")
 
@@ -268,3 +278,23 @@ func _on_start_pressed() -> void:
 func _on_back_pressed() -> void:
 	SaveManager.current_slot = -1
 	get_tree().change_scene_to_file("res://scenes/ui/main_menu.tscn")
+
+func create_sprite_frames(species: PokemonSpecies) -> SpriteFrames:
+	var frames = SpriteFrames.new()
+	frames.remove_animation("default")
+	frames.add_animation("idle")
+	frames.set_animation_speed("idle", species.anim_fps)
+	frames.set_animation_loop("idle", true)
+
+	var sheet = species.sprite_sheet
+	var frame_w = species.frame_size.x
+	var frame_h = species.frame_size.y
+	var cols = species.frame_columns
+
+	for col in cols:
+		var atlas = AtlasTexture.new()
+		atlas.atlas = sheet
+		atlas.region = Rect2(col * frame_w, 0, frame_w, frame_h)
+		frames.add_frame("idle", atlas)
+
+	return frames

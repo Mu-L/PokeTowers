@@ -1,8 +1,10 @@
-[gd_resource type="Resource" script_class="PokemonSpecies" load_steps=4 format=3]
+[gd_resource type="Resource" script_class="PokemonSpecies" load_steps=6 format=3]
 
 [ext_resource type="Script" path="res://scripts/resources/pokemon_species.gd" id="1_script"]
 [ext_resource type="PackedScene" uid="uid://cgeneric_pokemon_tower" path="res://scenes/towers/generic_pokemon.tscn" id="2_tower"]
 [ext_resource type="Texture2D" uid="uid://ccharmander_sprite" path="res://assets/sprites/charmander/icon.png" id="3_icon"]
+[ext_resource type="Texture2D" path="res://assets/sprites/charmander/spritesheets/idle.png" id="4_sheet"]
+[ext_resource type="Texture2D" path="res://assets/sprites/charmander/spritesheets/attack.png" id="5_attack"]
 
 [resource]
 script = ExtResource("1_script")
@@ -21,3 +23,16 @@ reward = 30
 evolves_to = "charmeleon"
 evolve_level = 16
 catch_rate = 0.3
+sprite_sheet = ExtResource("4_sheet")
+frame_size = Vector2i(32, 40)
+frame_columns = 4
+anim_fps = 8.0
+attack_sheet = ExtResource("5_attack")
+attack_frame_size = Vector2i(64, 64)
+attack_frame_columns = 11
+base_phys_attack = 52
+base_spec_attack = 60
+base_defense = 43
+base_spec_defense = 50
+base_stat_speed = 65
+learnset = {1: "scratch", 7: "ember", 12: "fire_fang", 24: "flamethrower"}
