@@ -316,6 +316,9 @@ func cancel_placement() -> void:
 
 func select_placed_tower(tower: Node2D) -> void:
 	if selected_tower != tower:
+		# Deselect previous tower first
+		if selected_tower:
+			tower_deselected.emit()
 		selected_tower = tower
 		tower_selected.emit(tower)
 

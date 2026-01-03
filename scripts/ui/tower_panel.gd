@@ -83,10 +83,12 @@ func build_ui() -> void:
 	vbox.add_child(pending_section)
 
 func _on_tower_selected(tower: Node2D) -> void:
+	print("TowerPanel: tower selected signal received")
 	if tower is BaseTower:
 		current_tower = tower as BaseTower
 		refresh_ui()
 		visible = true
+		print("TowerPanel: now visible")
 		tower.show_range_indicator()
 
 func _on_tower_deselected() -> void:

@@ -218,7 +218,7 @@ func create_lightning_effect(from: Vector2, to: Vector2) -> void:
 	line.default_color = Color.YELLOW
 	line.add_point(from)
 	line.add_point(to)
-	get_tree().root.add_child(line)
+	get_viewport().add_child(line)
 
 	var tween = create_tween()
 	tween.tween_property(line, "modulate:a", 0.0, 0.15)
@@ -275,7 +275,7 @@ func create_poison_effect(enemy: BaseEnemy) -> void:
 	particles.gravity = Vector2(0, -20)
 	particles.color = Color(0.3, 0.8, 0.2, 0.7)
 	particles.global_position = enemy.global_position
-	get_tree().root.add_child(particles)
+	get_viewport().add_child(particles)
 
 	var timer = get_tree().create_timer(1.0)
 	timer.timeout.connect(particles.queue_free)
@@ -306,7 +306,7 @@ func create_rock_effect(pos: Vector2) -> void:
 	particles.gravity = Vector2(0, 200)
 	particles.color = Color(0.6, 0.5, 0.4, 0.9)
 	particles.global_position = pos
-	get_tree().root.add_child(particles)
+	get_viewport().add_child(particles)
 
 	var timer = get_tree().create_timer(1.0)
 	timer.timeout.connect(particles.queue_free)
@@ -344,7 +344,7 @@ func create_cone_effect(direction: Vector2) -> void:
 	particles.gravity = Vector2.ZERO
 	particles.color = Color(0.7, 0.5, 0.3, 0.8)
 	particles.global_position = global_position
-	get_tree().root.add_child(particles)
+	get_viewport().add_child(particles)
 
 	var timer = get_tree().create_timer(0.5)
 	timer.timeout.connect(particles.queue_free)
@@ -372,7 +372,7 @@ func create_bug_hit_effect(pos: Vector2, _index: int) -> void:
 	particles.gravity = Vector2.ZERO
 	particles.color = Color(0.4, 0.7, 0.2, 0.8)
 	particles.global_position = pos + offset
-	get_tree().root.add_child(particles)
+	get_viewport().add_child(particles)
 
 	var timer = get_tree().create_timer(0.5)
 	timer.timeout.connect(particles.queue_free)

@@ -56,6 +56,11 @@ func load_map_data() -> void:
 	if map_data.background:
 		background.texture = map_data.background
 
+	bg_scale = map_data.bg_scale
+	bg_offset = map_data.bg_offset
+	scale_slider.value = bg_scale
+	apply_bg_scale(bg_scale)
+
 	waypoints.clear()
 	for pt in map_data.path_points:
 		waypoints.append(Vector2(pt.x, pt.y))
@@ -431,6 +436,9 @@ func _on_save_pressed() -> void:
 	for z in zones:
 		zones_arr.append(z)
 	map_data.zones = zones_arr
+
+	map_data.bg_scale = bg_scale
+	map_data.bg_offset = bg_offset
 
 	if loaded_bg_path != "" and background.texture:
 		var ext = "." + loaded_bg_path.get_extension()

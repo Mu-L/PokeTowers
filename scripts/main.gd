@@ -14,8 +14,12 @@ func _ready() -> void:
 	if active_map:
 		load_map(active_map)
 
+const MAP_WIDTH := 880.0
+const MAP_HEIGHT := 720.0
+
 func load_map(data: MapData) -> void:
 	background.texture = data.background
+	apply_bg_transform(data.bg_scale, data.bg_offset)
 
 	# Set path curve
 	var curve = Curve2D.new()
@@ -30,3 +34,12 @@ func load_map(data: MapData) -> void:
 
 	# Load zones
 	tower_placement.load_zones_from_map(data)
+
+func apply_bg_transform(scale: float, offset: Vector2) -> void:
+	var map_center = Vector2(MAP_WIDTH / 2, MAP_HEIGHT / 2) + offset
+	var new_width = MAP_WIDTH * scale
+	var new_height = MAP_HEIGHT * scale
+	background.offset_left = map_center.x - new_width / 2
+	background.offset_right = map_center.x + new_width / 2
+	background.offset_top = map_center.y - new_height / 2
+	background.offset_bottom = map_center.y + new_height / 2

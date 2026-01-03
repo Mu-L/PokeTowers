@@ -40,7 +40,6 @@ func set_tower_data(data: TowerData) -> void:
 func update_button_state() -> void:
 	if deploy_btn:
 		deploy_btn.disabled = _placed
-		deploy_btn.text = "Placed" if _placed else "Deploy"
 	modulate = Color(0.5, 0.5, 0.5) if _placed else Color.WHITE
 
 func set_placed(placed: bool) -> void:

@@ -27,27 +27,25 @@ func _ready() -> void:
 	setup_click_detection()
 	setup_pending_indicator()
 
+const CLICK_RADIUS := 30.0
+
 func setup_click_detection() -> void:
-	var click_area = Area2D.new()
-	click_area.name = "ClickArea"
-	click_area.collision_layer = 0
-	click_area.collision_mask = 0
-	click_area.input_pickable = true
+	# Add to group for click detection
+	add_to_group("towers")
 
-	var shape = CollisionShape2D.new()
-	var circle = CircleShape2D.new()
-	circle.radius = 25.0
-	shape.shape = circle
-	click_area.add_child(shape)
-	add_child(click_area)
+func _input(event: InputEvent) -> void:
+	# Don't intercept clicks during tower placement
+	if GameManager.is_placing_tower:
+		return
 
-	click_area.input_event.connect(_on_click_input)
-
-func _on_click_input(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if event is InputEventMouseButton:
 		var mouse = event as InputEventMouseButton
 		if mouse.button_index == MOUSE_BUTTON_LEFT and mouse.pressed:
-			GameManager.select_placed_tower(self)
+			# Check if click is within tower radius
+			var mouse_pos = get_global_mouse_position()
+			if global_position.distance_to(mouse_pos) <= CLICK_RADIUS:
+				GameManager.select_placed_tower(self)
+				get_viewport().set_input_as_handled()
 
 func setup_pending_indicator() -> void:
 	pending_indicator = Label.new()

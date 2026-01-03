@@ -112,12 +112,63 @@ func _on_start_wave_pressed() -> void:
 func _on_game_over(won: bool) -> void:
 	start_wave_btn.disabled = true
 	# Award Zenny for completing the run
+	var zenny_reward = 0
 	if won:
-		var zenny_reward = 500 + GameManager.current_wave * 100
+		zenny_reward = 500 + GameManager.current_wave * 100
 		GameManager.add_zenny(zenny_reward)
 		# Mark map as completed
 		if GameManager.selected_map:
 			GameManager.complete_map(GameManager.selected_map.get_id())
+
+	# Show result popup
+	show_game_over_popup(won, zenny_reward)
+
+func show_game_over_popup(won: bool, zenny: int) -> void:
+	# Darken background
+	var overlay = ColorRect.new()
+	overlay.color = Color(0, 0, 0, 0.6)
+	overlay.set_anchors_preset(Control.PRESET_FULL_RECT)
+	add_child(overlay)
+
+	# Center container
+	var center = CenterContainer.new()
+	center.set_anchors_preset(Control.PRESET_FULL_RECT)
+	add_child(center)
+
+	var popup = PanelContainer.new()
+	var style = StyleBoxFlat.new()
+	style.bg_color = Color(0.1, 0.1, 0.15, 0.98)
+	style.set_border_width_all(3)
+	style.border_color = Color(1, 0.85, 0.2) if won else Color(0.8, 0.2, 0.2)
+	style.set_corner_radius_all(12)
+	style.set_content_margin_all(30)
+	popup.add_theme_stylebox_override("panel", style)
+	center.add_child(popup)
+
+	var vbox = VBoxContainer.new()
+	vbox.add_theme_constant_override("separation", 20)
+	popup.add_child(vbox)
+
+	var title = Label.new()
+	title.text = "VICTORY!" if won else "DEFEAT"
+	title.add_theme_font_size_override("font_size", 32)
+	title.add_theme_color_override("font_color", Color(1, 0.85, 0.2) if won else Color(0.8, 0.2, 0.2))
+	title.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	vbox.add_child(title)
+
+	if won and zenny > 0:
+		var reward = Label.new()
+		reward.text = "+%d Zenny" % zenny
+		reward.add_theme_font_size_override("font_size", 18)
+		reward.add_theme_color_override("font_color", Color(0.3, 0.8, 0.3))
+		reward.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+		vbox.add_child(reward)
+
+	var btn = Button.new()
+	btn.text = "Continue"
+	btn.custom_minimum_size = Vector2(120, 40)
+	btn.pressed.connect(func(): get_tree().change_scene_to_file("res://scenes/ui/campaign_select.tscn"))
+	vbox.add_child(btn)
 
 func _on_enemy_selected(enemy: Node) -> void:
 	enemy_info_panel.visible = true

@@ -74,6 +74,14 @@ func _input(event: InputEvent) -> void:
 		elif mouse_event.button_index == MOUSE_BUTTON_RIGHT and mouse_event.pressed:
 			GameManager.cancel_placement()
 
+func _unhandled_input(event: InputEvent) -> void:
+	# Deselect tower when clicking empty space (not handled by a tower)
+	if event is InputEventMouseButton:
+		var mouse_event = event as InputEventMouseButton
+		if mouse_event.button_index == MOUSE_BUTTON_LEFT and mouse_event.pressed:
+			if not GameManager.is_placing_tower and GameManager.selected_tower:
+				GameManager.deselect_tower()
+
 func get_zone_at_mouse() -> Area2D:
 	var mouse_pos = get_global_mouse_position()
 	var half_size = zone_size / 2
