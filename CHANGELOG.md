@@ -1,53 +1,44 @@
 # Changelog
 
-## [0.3.0] - 2026-02-08 — Bug Fix & Polish Pass
+All notable changes to PokeTowers are documented here.
+
+## [0.3.0] - 2026-02-08 — IV System & Playable Demo
+
+### Added
+- **Playable Demo Scene** (`cfc74d4`) — Route 1 map with 3 starter Pokémon (Charmander, Squirtle, Bulbasaur), ready to play from `scenes/demo/demo.tscn`
+- **IV (Individual Values) System** (`f24eea2`) — Each caught Pokémon gets 5 random IV stats (HP, Attack, Defense, Speed, Special), star ratings (1-5★) based on IV totals, and visual star indicators in the UI
+- **Demo documentation** — See [DEMO.md](DEMO.md) for quick-start instructions
 
 ### Fixed
-- **Critical: Dynamic enemies invisible to towers** — `base_enemy.tscn` was missing its `Area2D` node, so dynamically spawned enemies (from the wave generation system) had no collision body on layer 2. Towers could never detect or attack them. Only legacy pre-built enemy scenes (caterpie.tscn, etc.) worked.
-- **Save migration never re-saved** — After migrating a v1 save to v2, the re-save check compared `version == 1` but the variable had already been set to 2. Migrated saves were loaded correctly but never persisted in the new format.
-- **Legacy HUD crash** — `hud.gd` referenced non-existent `GameManager.currency_changed` signal and `GameManager.currency` property (renamed to `zenny_changed`/`zenny` in the individual Pokémon update). Fixed to use correct signal.
-- **Party select didn't remember previous party** — Opening the party select screen always started with an empty party. Now pre-loads the existing party so players don't have to re-select every time.
-- **Division by zero in catch rate** — `calculate_catch_rate` could divide by zero if an enemy had `max_hp <= 0`.
+- **Bug fix & polish pass** (`182aa19`) — Fixed critical enemy detection issues, save migration for new IV fields, evolution stat recalculation, and general stability improvements
 
-### Improved
-- **Evolution now updates tower stats** — Previously, when a tower Pokémon evolved mid-battle, only the species ID changed (with a TODO comment). Now evolution properly updates damage, range, attack speed, type, and recalculates the range circle.
-- **Starter Pokémon `base_stat_range`** — Added explicit range stat values to Bulbasaur (50), Charmander (40), and Squirtle (55) resources instead of relying on the script default.
-
-## [0.2.0] - 2026-02-07 — Individual Values System
+## [0.2.0] - 2026-02-08 — Waves, Maps & Roadmap
 
 ### Added
-- **IV (Individual Values) system** — Each caught Pokémon now has 5 random IVs (0–31): Physical Attack, Special Attack, Defense, Speed, and Range
-- **IV-based stat scaling** — Tower damage, defense, speed, and range scale with IVs (up to 1.3× at 31)
-- **Pokémon stat formula** — Damage calculation uses mainline-style `((base + IV) × 2) × level / 100 + 5`
-- **Move system** — Pokémon learn moves from learnsets on level-up; towers select the best move per-enemy
-- **Star rating** — 0–5 star IV quality display; "PERFECT" badge for all-31 IVs
-- **Tower panel** — Click a placed tower to see its level, XP, IVs, and moves; learn or skip new moves
-- **Perfect IV indicators** — Gold star badges and particle effects on towers with perfect IVs
-- **UUID-based Pokémon** — Each caught Pokémon is a unique individual with a UUID (save format v2)
-- **Save migration** — v1 saves (species-keyed) automatically migrate to v2 (UUID-keyed)
+- **Dynamic wave generation** (`4317534`) — Waves scale with difficulty and wave number; boss waves every 5th wave; epic final wave
+- **Map editor tool** (`4f8a0bd`) — Path + zone editing with export support
+- **Party select redesign** (`4f8a0bd`) — Overhauled party selection UI
+- **Move system** (`4f8a0bd`) — 15 moves with physical/special categories, Pokémon damage formula with STAB
+- **Spritesheet animations** (`14e0ed3`, `ecc8d46`, `6c5ab83`) — Animated idle sprites for ~10 Pokémon, static icon fallback for rest
+- **Background scaling & game over popup** (`8bcd541`) — Map backgrounds scale properly, game over UI added
+- **Project roadmap** (`019a9bb`, `30c07e6`) — Comprehensive development roadmap with 7 priority tiers
 
-## [0.1.0] - 2026-02-07 — Dynamic Waves & Maps
+### Fixed
+- Sprite path fixes after folder migration (`d742074`, `8d3264a`)
 
-### Added
-- Dynamic wave generation system with per-map enemy pools
-- Campaign/region selection with 8 regions (Kanto through Galar)
-- Map progression system with lock/unlock
-- Map editor tool for path and zone placement
-- Background scaling and offset for maps
-- Zenny meta-currency earned on run completion
-- Party size upgrade system
-- Auto-start waves checkbox
-- Ball selection for catching (Poké Ball, Great Ball, Ultra Ball)
-- 250+ Pokémon species resources (Gens 1–3)
-- Animated spritesheets for towers and enemies
-
-## [0.0.1] - 2026-02-07 — Initial Release
+## [0.1.0] - 2026-02-07 — Foundation
 
 ### Added
-- Core tower defense gameplay loop
-- Tower placement on grid zones
-- Basic wave system with 10 waves
-- Type effectiveness chart (9 types)
-- Pokémon catching mechanic (auto-catch at <25% HP)
-- Save/load system with 3 slots
-- Starter selection (Bulbasaur, Charmander, Squirtle)
+- **Core tower defense loop** — Tower placement on zones, Path2D enemy pathing, wave spawning, lives & currency systems
+- **200+ Pokémon species** defined as resources with stats, icons, and learnsets
+- **9 type system** — Normal, Fire, Water, Grass, Electric, Ground, Rock, Flying, Bug with full effectiveness chart
+- **Type-based attacks** — Electric=chain lightning, Fire=AOE projectile, Water=slow, Grass=poison DOT, Rock=splash, Ground=cone, Bug=multi-hit
+- **Catching mechanic** — Auto-catch at <25% HP, ball types (Poké/Great/Ultra), catch rate formula
+- **Evolution system** — Level-based evolution tracking
+- **Save system** — 3 save slots via SaveManager autoload
+- **Campaign structure** — 8 regions (Kanto→Galar), ~6 maps each, progression unlocking
+- **Party system** — Select Pokémon before each map, party size upgrades with Zenny
+- **Full UI flow** — Main Menu → Save Select → Starter Select → Campaign → Map Select → Party Select → Game
+- **Projectile system** — Homing projectiles with fire (AOE) and water (slow) variants
+- **Visual effects** — Damage numbers, lightning lines, per-type particles, flash on super effective
+- **XP & leveling** — Towers gain XP from kills, level up with stat scaling

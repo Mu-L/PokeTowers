@@ -1,50 +1,101 @@
 # PokeTowers Enhancement Roadmap
 
-*Generated: 2026-02-08 | Last reviewed: 2026-02-08 (research-backed revision)*
-
-## Current State Summary
-
-PokeTowers is a **Godot 4.5** Pokemon-themed tower defense game with substantial foundations already in place:
-
-### ✅ Implemented
-- **Core TD loop**: Tower placement on zones, Path2D enemies, wave spawning, lives/currency
-- **Type system**: 9 types (Normal, Fire, Water, Grass, Electric, Ground, Rock, Flying, Bug) with effectiveness chart
-- **Type-based attacks**: Electric=chain lightning, Fire=AOE projectile, Water=slow projectile, Grass=poison DOT, Rock=splash, Ground=cone, Bug=multi-hit
-- **Pokemon data system**: ~200+ species defined as resources with stats, icons, learnsets
-- **Move system**: 15 moves with physical/special categories, Pokemon damage formula with STAB
-- **Catching mechanic**: Auto-catch at <25% HP, ball types (Poke/Great/Ultra), catch rate formula
-- **Evolution**: Level-based evolution tracking (visual swap TODO)
-- **Save system**: 3 save slots via SaveManager autoload
-- **Campaign structure**: 8 regions (Kanto→Galar), each with ~6 maps, progression unlocking
-- **Party system**: Select Pokemon before each map, party size upgrades with Zenny
-- **UI flow**: Main Menu → Save Select → Starter Select → Campaign Select → Map Select → Party Select → Game
-- **Map editor tool**: Path + zone editing with export
-- **Projectile system**: Homing projectiles with fire (AOE) and water (slow) variants
-- **Visual effects**: Damage numbers, lightning lines, particle effects per type, flash on super effective
-- **XP/Leveling**: Towers gain XP from kills, level up with stat scaling
-- **Dynamic wave generation**: Scales with difficulty, wave number; boss waves every 5th; final wave epic
-
-### ❌ Missing / Incomplete
-- No sound/music at all
-- No touch/mobile input support
-- No responsive scaling for mobile aspect ratios
-- Evolution doesn't visually swap the tower scene/sprite (TODO in code)
-- No tower upgrade/sell UI for placed towers
-- No speed control (fast-forward/pause)
-- No tutorial or onboarding
-- No particle effects for projectile impacts beyond fire/water
-- No idle animations on most enemies (only ~10 have spritesheets, rest use static icons)
-- HUD still has legacy tower_data dict (outdated, party system is the real flow)
-- No Pokedex viewer screen
-- No settings screen (volume, etc.)
-- No victory rewards screen (Zenny payout, catches summary)
-- **No object pooling** (projectiles/enemies instantiate+free each time — performance risk on mobile)
-- **No export templates configured** (Android/iOS export presets missing from project.godot)
-- **`stretch/aspect` not set** — defaults to `ignore`, will distort on non-16:9 screens
-- **No AudioManager autoload** — need before any sound work
-- **No physics layers configured** — everything on default layer, wastes collision checks
+*Generated: 2026-02-08 | Last reviewed: 2026-02-08*
 
 ---
+
+## ✅ Phase 1: Core Foundation — COMPLETE
+
+- [x] Core TD loop: tower placement, Path2D enemies, wave spawning, lives/currency
+- [x] 9-type system with effectiveness chart (Normal, Fire, Water, Grass, Electric, Ground, Rock, Flying, Bug)
+- [x] Type-based attacks (chain lightning, AOE, slow, poison DOT, splash, cone, multi-hit)
+- [x] 200+ Pokémon species as resources with stats, icons, learnsets
+- [x] Move system: 15 moves, physical/special categories, STAB
+- [x] Catching mechanic: auto-catch at <25% HP, ball types, catch rate formula
+- [x] Evolution: level-based tracking
+- [x] Save system: 3 slots via SaveManager autoload
+- [x] Campaign: 8 regions (Kanto→Galar), ~6 maps each, progression unlocking
+- [x] Party system with Zenny-based size upgrades
+- [x] Full UI flow: Main Menu → Save → Starter → Campaign → Map → Party → Game
+- [x] Map editor tool with path + zone export
+- [x] Projectile system (homing, AOE fire, slow water)
+- [x] Visual effects: damage numbers, lightning, per-type particles, super effective flash
+- [x] XP/leveling with stat scaling
+- [x] Dynamic wave generation with boss waves every 5th
+
+## ✅ Phase 2: IV System & Demo — COMPLETE
+
+- [x] Individual Values (IVs): 5 stats (HP, Attack, Defense, Speed, Special)
+- [x] Star ratings (1-5★) based on IV totals
+- [x] Visual star indicators in UI
+- [x] Bug fix & polish pass (enemy detection, save migration, evolution stats)
+- [x] Playable demo scene (Route 1, 3 starters)
+
+---
+
+## 🔲 Phase 3: Game Feel & Audio (Next Up)
+
+- [ ] Sound effects & music (AudioManager autoload, per-type attack SFX, BGM)
+- [ ] Game speed controls (1×/2×/3× via `Engine.time_scale`)
+- [ ] Tower sell button (70% refund)
+- [ ] Evolution visual swap (sprite + effects)
+- [ ] Screen shake & hit juice
+- [ ] Victory rewards screen (Zenny, catches, star rating)
+
+## 🔲 Phase 4: Tutorial & Onboarding
+
+- [ ] Tutorial system for first map (Pallet Town guided walkthrough)
+- [ ] Type effectiveness tutorial hints
+- [ ] Contextual tooltips for new players
+- [ ] Skip tutorial on replay (`SaveManager.has_completed_tutorial`)
+
+## 🔲 Phase 5: Content Expansion
+
+- [ ] Remaining 9 Pokémon types (Ice, Psychic, Fighting, Ghost, Dark, Poison, Steel, Fairy, Dragon)
+- [ ] Tower specializations (branching evolution paths)
+- [ ] More maps per region
+- [ ] Legendary Pokémon as boss-wave catches
+- [ ] Endless mode (infinite scaling after final wave)
+- [ ] Pokédex viewer screen
+
+## 🔲 Phase 6: Difficulty & Balance
+
+- [ ] Difficulty settings (Easy / Normal / Hard per map)
+- [ ] Difficulty curve tuning (S-curve scaling, rubber-banding)
+- [ ] Wave preview (show enemy types before each wave)
+- [ ] Economy balancing (`economy_config.tres` resource)
+- [ ] Star rating system (★/★★/★★★ per map based on lives remaining)
+
+## 🔲 Phase 7: Multiplayer & Social
+
+- [ ] Co-op multiplayer (shared map, split party)
+- [ ] Pokémon trading between players
+- [ ] Leaderboards (endless mode high scores)
+- [ ] Achievement system with rewards
+
+## 🔲 Phase 8: Mobile & Release Prep
+
+- [ ] Touch input (drag-to-place, tap-to-select)
+- [ ] Responsive UI scaling for mobile aspect ratios
+- [ ] Object pooling (projectiles, enemies, particles)
+- [ ] Fix stretch/aspect settings in project.godot
+- [ ] Configure physics collision layers
+- [ ] Android/iOS export templates
+- [ ] Performance profiling (60 FPS target on mid-range mobile)
+- [ ] Settings screen (volume, shake toggle, damage numbers toggle)
+
+## 🔲 Phase 9: Distribution
+
+- [ ] Steam store page & build pipeline
+- [ ] itch.io page with web export
+- [ ] Trailer / gameplay GIF
+- [ ] Press kit
+
+---
+
+## Detailed Technical Notes
+
+*(Preserved from previous roadmap revision for reference.)*
 
 ## Priority 0: Project Configuration Fixes 🔧
 
