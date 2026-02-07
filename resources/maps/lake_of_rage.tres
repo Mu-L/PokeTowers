@@ -11,3 +11,6 @@ path_points = PackedVector2Array(50, 360, 200, 360, 200, 200, 450, 200, 450, 450
 zones = PackedVector2Array(100, 300, 100, 420, 150, 150, 250, 150, 350, 150, 350, 250, 400, 350, 500, 400, 550, 500, 600, 500, 700, 350, 750, 200)
 zone_size = 40
 waves_count = 12
+enemy_pool = Array[String](["magikarp", "gyarados"])
+boss_pool = Array[String](["gyarados"])
+enemy_level_base = 15

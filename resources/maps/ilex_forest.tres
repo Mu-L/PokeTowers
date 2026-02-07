@@ -11,3 +11,6 @@ path_points = PackedVector2Array(50, 550, 200, 550, 200, 350, 400, 350, 400, 550
 zones = PackedVector2Array(100, 500, 100, 600, 150, 400, 250, 300, 300, 300, 350, 400, 450, 500, 500, 500, 500, 300, 600, 150, 650, 150, 700, 250, 800, 300, 800, 450)
 zone_size = 40
 waves_count = 10
+enemy_pool = Array[String](["oddish", "paras", "caterpie", "weedle"])
+boss_pool = Array[String](["parasect", "vileplume"])
+enemy_level_base = 8

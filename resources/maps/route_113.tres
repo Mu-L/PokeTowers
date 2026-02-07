@@ -11,3 +11,6 @@ path_points = PackedVector2Array(50, 300, 250, 300, 250, 150, 500, 150, 500, 350
 zones = PackedVector2Array(100, 250, 150, 250, 200, 350, 300, 100, 400, 100, 450, 200, 450, 300, 550, 400, 650, 400, 650, 300, 750, 250, 800, 150)
 zone_size = 40
 waves_count = 10
+enemy_pool = Array[String](["slugma", "spinda", "skarmory"])
+boss_pool = Array[String](["magcargo", "torkoal"])
+enemy_level_base = 8

@@ -11,3 +11,6 @@ path_points = PackedVector2Array(50, 600, 200, 600, 200, 350, 400, 350, 400, 550
 zones = PackedVector2Array(100, 550, 100, 650, 150, 400, 250, 300, 350, 300, 350, 450, 450, 500, 550, 600, 550, 300, 650, 150, 700, 250, 800, 350)
 zone_size = 40
 waves_count = 12
+enemy_pool = Array[String](["minior", "beldum", "elekid", "skarmory"])
+boss_pool = Array[String](["metagross", "vikavolt"])
+enemy_level_base = 15

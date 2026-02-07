@@ -11,3 +11,6 @@ path_points = PackedVector2Array(440, 700, 440, 550, 300, 550, 300, 350, 500, 35
 zones = PackedVector2Array(380, 650, 500, 650, 250, 500, 350, 500, 350, 400, 450, 300, 550, 250, 400, 150, 400, 100, 500, 100, 650, 100, 650, 200, 700, 300, 800, 400, 700, 500, 650, 550, 750, 650)
 zone_size = 40
 waves_count = 15
+enemy_pool = Array[String](["golbat", "claydol", "banette"])
+boss_pool = Array[String](["rayquaza"])
+enemy_level_base = 40

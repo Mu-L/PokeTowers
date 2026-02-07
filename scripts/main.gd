@@ -13,6 +13,7 @@ func _ready() -> void:
 	var active_map = GameManager.selected_map if GameManager.selected_map else map_data
 	if active_map:
 		load_map(active_map)
+		wave_manager.map_data = active_map
 
 const MAP_WIDTH := 880.0
 const MAP_HEIGHT := 720.0

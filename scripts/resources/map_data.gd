@@ -11,6 +11,9 @@ class_name MapData extends Resource
 @export var zones: PackedVector2Array = PackedVector2Array()
 @export var zone_size: int = 40
 @export var waves_count: int = 10
+@export var enemy_pool: Array[String] = []
+@export var boss_pool: Array[String] = []
+@export var enemy_level_base: int = 1
 
 func get_id() -> String:
 	if map_id != "":
