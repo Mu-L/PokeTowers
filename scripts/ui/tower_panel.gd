@@ -8,6 +8,7 @@ var pending_move_index: int = -1  # Which pending move we're learning
 var name_label: Label
 var level_label: Label
 var xp_bar: ProgressBar
+var iv_section: VBoxContainer
 var moves_container: VBoxContainer
 var pending_section: VBoxContainer
 var close_btn: Button
@@ -65,6 +66,17 @@ func build_ui() -> void:
 	xp_bar.add_theme_stylebox_override("fill", xp_fill)
 	vbox.add_child(xp_bar)
 
+	# IV section
+	var iv_title = Label.new()
+	iv_title.text = "IVs"
+	iv_title.add_theme_font_size_override("font_size", 11)
+	iv_title.add_theme_color_override("font_color", Color(0.5, 0.5, 0.6))
+	vbox.add_child(iv_title)
+
+	iv_section = VBoxContainer.new()
+	iv_section.add_theme_constant_override("separation", 3)
+	vbox.add_child(iv_section)
+
 	# Moves section
 	var moves_title = Label.new()
 	moves_title.text = "MOVES"
@@ -113,6 +125,9 @@ func refresh_ui() -> void:
 	level_label.text = "Level %d" % caught.level
 	xp_bar.value = caught.get_xp_progress() * 100
 
+	# Update IV display
+	refresh_iv_section(caught)
+
 	# Clear and rebuild moves
 	for child in moves_container.get_children():
 		child.queue_free()
@@ -124,6 +139,84 @@ func refresh_ui() -> void:
 
 	# Pending moves
 	refresh_pending_section(caught)
+
+func refresh_iv_section(caught: CaughtPokemon) -> void:
+	for child in iv_section.get_children():
+		child.queue_free()
+
+	var ivs = caught.get_ivs()
+	var stat_names = CaughtPokemon.IV_STATS
+
+	for i in stat_names.size():
+		var hbox = HBoxContainer.new()
+		hbox.add_theme_constant_override("separation", 6)
+		iv_section.add_child(hbox)
+
+		# Stat label
+		var label = Label.new()
+		label.text = stat_names[i]
+		label.custom_minimum_size = Vector2(45, 0)
+		label.add_theme_font_size_override("font_size", 10)
+		label.add_theme_color_override("font_color", Color(0.6, 0.6, 0.7))
+		hbox.add_child(label)
+
+		# IV bar
+		var bar = ProgressBar.new()
+		bar.custom_minimum_size = Vector2(80, 10)
+		bar.max_value = 31
+		bar.value = ivs[i]
+		bar.show_percentage = false
+		bar.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+
+		var bar_bg = StyleBoxFlat.new()
+		bar_bg.bg_color = Color(0.15, 0.15, 0.2)
+		bar_bg.set_corner_radius_all(3)
+		bar.add_theme_stylebox_override("background", bar_bg)
+
+		var bar_fill = StyleBoxFlat.new()
+		bar_fill.set_corner_radius_all(3)
+		# Color based on IV quality
+		if ivs[i] == 31:
+			bar_fill.bg_color = Color(1.0, 0.85, 0.0)  # Gold for perfect
+		elif ivs[i] >= 25:
+			bar_fill.bg_color = Color(0.3, 0.9, 0.4)  # Green for great
+		elif ivs[i] >= 15:
+			bar_fill.bg_color = Color(0.3, 0.7, 1.0)  # Blue for decent
+		else:
+			bar_fill.bg_color = Color(0.5, 0.5, 0.6)  # Gray for low
+		bar.add_theme_stylebox_override("fill", bar_fill)
+		hbox.add_child(bar)
+
+		# Value label
+		var val_label = Label.new()
+		val_label.text = str(ivs[i])
+		val_label.custom_minimum_size = Vector2(20, 0)
+		val_label.add_theme_font_size_override("font_size", 10)
+		if ivs[i] == 31:
+			val_label.add_theme_color_override("font_color", Color(1.0, 0.85, 0.0))
+			val_label.text = "★"
+		else:
+			val_label.add_theme_color_override("font_color", Color(0.5, 0.5, 0.6))
+		hbox.add_child(val_label)
+
+	# Overall rating
+	var rating = caught.get_iv_star_rating()
+	if rating > 0:
+		var rating_label = Label.new()
+		rating_label.text = "★".repeat(rating) + "☆".repeat(5 - rating)
+		rating_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+		rating_label.add_theme_font_size_override("font_size", 12)
+		rating_label.add_theme_color_override("font_color", Color(1.0, 0.85, 0.0) if rating >= 4 else Color(0.6, 0.6, 0.7))
+		iv_section.add_child(rating_label)
+
+	# Perfect badge
+	if caught.is_all_perfect():
+		var perfect_label = Label.new()
+		perfect_label.text = "⭐ PERFECT ⭐"
+		perfect_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+		perfect_label.add_theme_font_size_override("font_size", 11)
+		perfect_label.add_theme_color_override("font_color", Color(1.0, 0.85, 0.0))
+		iv_section.add_child(perfect_label)
 
 func create_move_slot(index: int, caught: CaughtPokemon) -> Button:
 	var btn = Button.new()

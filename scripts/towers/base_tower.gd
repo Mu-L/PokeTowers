@@ -21,11 +21,15 @@ var pending_indicator: Label = null
 @onready var range_shape: CollisionShape2D = $RangeArea/CollisionShape2D
 @onready var range_indicator: Node2D = $RangeIndicator
 
+var perfect_badge: Label = null
+var perfect_glow: CPUParticles2D = null
+
 func _ready() -> void:
 	setup_range()
 	hide_range_indicator()
 	setup_click_detection()
 	setup_pending_indicator()
+	setup_iv_indicators()
 
 const CLICK_RADIUS := 30.0
 
@@ -58,11 +62,46 @@ func setup_pending_indicator() -> void:
 	pending_indicator.visible = false
 	add_child(pending_indicator)
 
+func setup_iv_indicators() -> void:
+	if not caught_pokemon:
+		return
+
+	# "★" badge if any IV is perfect (31)
+	if caught_pokemon.perfect_iv_count() > 0:
+		perfect_badge = Label.new()
+		perfect_badge.text = "★" if caught_pokemon.perfect_iv_count() == 1 else "★%d" % caught_pokemon.perfect_iv_count()
+		perfect_badge.add_theme_font_size_override("font_size", 14)
+		perfect_badge.add_theme_color_override("font_color", Color(1.0, 0.85, 0.0))
+		perfect_badge.add_theme_color_override("font_outline_color", Color(0, 0, 0))
+		perfect_badge.add_theme_constant_override("outline_size", 3)
+		perfect_badge.position = Vector2(-25, -35)
+		add_child(perfect_badge)
+
+	# Golden glow for all-perfect IVs
+	if caught_pokemon.is_all_perfect():
+		perfect_glow = CPUParticles2D.new()
+		perfect_glow.emitting = true
+		perfect_glow.amount = 12
+		perfect_glow.lifetime = 1.5
+		perfect_glow.explosiveness = 0.0
+		perfect_glow.direction = Vector2(0, -1)
+		perfect_glow.spread = 180.0
+		perfect_glow.initial_velocity_min = 8.0
+		perfect_glow.initial_velocity_max = 15.0
+		perfect_glow.gravity = Vector2(0, -10)
+		perfect_glow.scale_amount_min = 2.0
+		perfect_glow.scale_amount_max = 4.0
+		perfect_glow.color = Color(1.0, 0.9, 0.3, 0.6)
+		perfect_glow.emission_shape = CPUParticles2D.EMISSION_SHAPE_SPHERE
+		perfect_glow.emission_sphere_radius = 20.0
+		add_child(perfect_glow)
+
 func setup_range() -> void:
+	var effective_range = get_effective_range()
 	if range_shape and range_shape.shape is CircleShape2D:
-		(range_shape.shape as CircleShape2D).radius = attack_range
+		(range_shape.shape as CircleShape2D).radius = effective_range
 	if range_indicator:
-		range_indicator.scale = Vector2(attack_range / 50.0, attack_range / 50.0)
+		range_indicator.scale = Vector2(effective_range / 50.0, effective_range / 50.0)
 
 func _process(delta: float) -> void:
 	attack_timer += delta
@@ -179,13 +218,19 @@ func check_evolution() -> void:
 		# TODO: swap tower scene for evolved form
 
 func get_effective_damage() -> float:
-	var mult = caught_pokemon.get_stat_multiplier() if caught_pokemon else 1.0
-	return damage * mult
+	if caught_pokemon:
+		var level_mult = 1.0 + (caught_pokemon.level - 1) * 0.1
+		return damage * level_mult * caught_pokemon.get_iv_attack_scale()
+	return damage
 
 func get_effective_range() -> float:
-	var mult = caught_pokemon.get_stat_multiplier() if caught_pokemon else 1.0
-	return attack_range * mult
+	if caught_pokemon:
+		var level_mult = 1.0 + (caught_pokemon.level - 1) * 0.05
+		return attack_range * level_mult * caught_pokemon.get_iv_range_scale()
+	return attack_range
 
 func get_effective_attack_speed() -> float:
-	var mult = caught_pokemon.get_stat_multiplier() if caught_pokemon else 1.0
-	return attack_speed * mult
+	if caught_pokemon:
+		var level_mult = 1.0 + (caught_pokemon.level - 1) * 0.05
+		return attack_speed * level_mult * caught_pokemon.get_iv_speed_scale()
+	return attack_speed

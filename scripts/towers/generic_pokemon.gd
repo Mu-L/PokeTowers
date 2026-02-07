@@ -53,6 +53,10 @@ func _ready() -> void:
 
 	super._ready()
 
+	# Re-setup range with IV scaling applied
+	if caught_pokemon:
+		setup_range()
+
 func setup_animated_sprite(species: PokemonSpecies) -> void:
 	# Hide static sprite
 	if sprite:

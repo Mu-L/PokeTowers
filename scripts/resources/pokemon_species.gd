@@ -46,6 +46,7 @@ class_name PokemonSpecies
 @export var base_defense: int = 50
 @export var base_spec_defense: int = 50
 @export var base_stat_speed: int = 50  # Attack speed stat (not movement)
+@export var base_stat_range: int = 50  # Range stat (for IV scaling)
 
 # Learnset: level -> move_id
 @export_group("Learnset")

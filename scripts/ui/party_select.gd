@@ -180,6 +180,19 @@ func create_collection_card(caught: CaughtPokemon, species: PokemonSpecies) -> P
 	stats_label.add_theme_color_override("font_color", Color(0.6, 0.6, 0.7))
 	vbox.add_child(stats_label)
 
+	# IV star rating
+	var rating = caught.get_iv_star_rating()
+	var iv_label = Label.new()
+	if caught.is_all_perfect():
+		iv_label.text = "⭐PERFECT"
+		iv_label.add_theme_color_override("font_color", Color(1.0, 0.85, 0.0))
+	else:
+		iv_label.text = "★".repeat(rating) + "☆".repeat(5 - rating)
+		iv_label.add_theme_color_override("font_color", Color(0.7, 0.65, 0.4) if rating >= 4 else Color(0.45, 0.45, 0.5))
+	iv_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	iv_label.add_theme_font_size_override("font_size", 8)
+	vbox.add_child(iv_label)
+
 	# Style with type color
 	style_collection_card(card, species.get_type_color())
 
